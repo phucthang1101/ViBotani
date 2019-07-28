@@ -1,0 +1,542 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Trắng da mặt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- search product-->
+<div style="position:fixed;bottom:2rem;left:0.5rem;z-index:100;width:25%;">
+    <div id="search__header">
+        <button class="btn btn-success" style="border-radius:50%;width:40px;height:40px;" id="search_open"><i class="fas fa-search"></i></button>
+        <button class="btn d-none pb-0" style="color:#28a745" id="search_close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class=" d-none" id="search_container">
+        <input style="border:3px solid #28a745;border-radius:0;" type="text" class="mb-2 form-control" placeholder="Tìm kiếm sản phẩm" aria-label="Input group example" aria-describedby="btnGroupAddon">
+        <div class="input-group mb-2">
+            <select style="border:3px solid #28a745;border-radius:0;display:block;" type="text" class="form-control search__product">
+                <option disabled selected>--Chọn dòng sản phẩm--</option>
+                <option value="/san-pham-trang-da">Sản phẩm trắng da</option>
+                <option value="#">Sản phẩm đẹp da</option>
+                <option value="#">Mỹ phẩm</option>
+                <option value="#">Sản phẩm đặc trị</option>
+            </select>
+        </div>
+        <div class="input-group mb-2">
+            <select style="border:3px solid #28a745;border-radius:0;display:block;" type="text" class="form-control search__product">
+                <option disabled selected>--Chọn loại sản phẩm--</option>
+                <option value="/san-pham-trang-da/trang-mat">Trắng mặt</option>
+                <option value="/san-pham-trang-da/trang-cap-toc">Trắng cấp tốc</option>
+                <option value="/san-pham-trang-da/trang-toan-than">Trắng toàn thân</option>
+            </select>
+        </div>
+        <button class="btn btn-success" style="border-radius:0;"><i class="fas fa-search"></i></button>
+    </div>
+</div>
+<!--modal-product-detail-->
+<div class="modal fade" id="modal-product-detail" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content" style="border:none; position:relative;">
+            <div class="modal-body p-0" style="border:none; position:relative;">
+                <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="row align-items-md-center m-0 bg-s">
+                    <div class="col-md-5 mt-3 col-sm-12">
+                        <img class="w-100 mb-3 image-main"  />
+                        <div class="owl-carousel owl-theme p-2" id="product-detail-carousel">
+                            <div class="item">
+                                <img class="image-1" />
+                            </div>
+                            <div class="item">
+                                <img class="image-2" />
+                            </div>
+                            <div class="item">
+                                <img class="image-3" />
+                            </div>
+                            <div class="item">
+                                <img class="image-4" />
+                            </div>
+                            <div class="item">
+                                <img class="image-5" />
+                            </div>
+                            <div class="item">
+                                <img class="image-6" />
+                            </div>
+                            <div class="item">
+                                <img class="image-7" />
+                            </div>
+                            <div class="item">
+                                <img class="image-8" />
+                            </div>
+                            <div class="item">
+                                <img class="image-9" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12 pl-3 pr-5">
+                        <div class="col-12 col-md-8 mx-auto">
+                            <img class="w-100" src="~/Content/Image/Logo/Logo_BiOshi.png" />
+                        </div>
+                        <h3 class="text-green text-center title" style="font-weight:bold;">Whitening Face Cream </h3>
+                        <h5 class="text-center text-green-s sub-title"><i>White Beauty from Nature</i></h5>
+                        <h5 class="text-green-s" style="font-weight:bold">
+                            Thông tin sản phẩm
+                        </h5>
+
+                        <p class="text-green info" style="font-size:small;">
+
+                        </p>
+
+                        <h5 class="text-green-s" style="font-weight:bold">
+                            Thành phần
+
+                        </h5>
+                        <p class="text-green  ingredient " style="font-size:small;">
+                        </p>
+                        <h5 class="text-green-s" style="font-weight:bold">
+                            Hướng dẫn sử dụng
+
+                        </h5>
+                        <p class="text-green use" style="font-size:small;">
+                        </p>
+                        <h5>Giá bán lẻ đề nghị: <small class="text-green price"></small></h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" style="background: linear-gradient(#f6dee1,#f8d5d5);">
+            <div class="carousel-item active">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5124.jpg" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5204.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5235.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5376.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9143. BiOshi.jpg" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5183.jpg" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9208.jpg" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9240.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9280.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9358.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9361.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9371.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+<section class="bg-s">
+    <div class="row m-0">
+        <!--1-->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+            <div class="image-container">
+                <a class="product-link " href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Green Tea Whitening Face Serum"
+                   data-sub-title="Serum trắng da mặt Trà Xanh 10ml"
+                   data-info="<strong>Serum trắng da mặt BiOshi Trà Xanh</strong> với công thức vượt trội có <strong>EGCG</strong> và <strong>Polyphenol</strong> chiết xuất từ lá trà xanh góp phần chống lão hóa, kháng khuẩn và loại bỏ sắc tố đen giúp dưỡng trắng da từ sâu bên trong và ngăn ngừa sự phát triển của tế bào ung thư da. <br/>                     Sản phẩm có Tannin và một số Vitamin, Khoáng chất thiết yếu cũng giúp se khít lỗ chân lông, sạch bã nhờn, bụi bẩn và khử đi các vi khuẩn trên da làm tăng độ đàn hồi, cho da khỏe mạnh và trắng sáng.<br/> Trọng lượng tịnh: 10ml <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000442/19/CBMP-HCM"
+                   data-price="150.000đ"
+                   data-use="Rửa mặt thật sạch, sau đó thoa Serum lên. Mát-xa hai bên gò má theo chiều xoắn ốc để các hoạt chất dễ dàng thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Kem hay Sữa tắm trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Phenoxy Ethanol; Aloevera Extract Potassium Sorbate Sodium Benzoate; Propane-1,2,3-Triol; Propane-1,2-Diol; Triethanolamide; Polyphenol; Acrylamide/Sodium Acryloyldimethyl Taurate Copolymer (Anionic, PH2-10); EGCG/ Camellia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9333.jpg"
+                   data-image-1="/Content/Image/Intro/9319.png"
+                   data-image-2="/Content/Image/Retouch/8U9A9327.jpg"
+                   data-image-3="/Content/Image/Intro/1.png"
+                   data-image-4="/Content/Image/Retouch/8U9A5067.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A5073.jpg"
+                   data-image-6="/Content/Image/Retouch/8U9A5085.jpg"
+                   data-image-count="6">
+                    <img class="image " style="height:100%;width:auto;" src="~/Content/Image/Retouch/8U9A9333.jpg" />
+                </a>
+            </div>
+            <h5 class="text-center text-green">
+                <a class="product-link text-green" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Green Tea Whitening Face Serum"
+                   data-sub-title="Serum trắng da mặt Trà Xanh 10ml"
+                   data-info="<strong>Serum trắng da mặt BiOshi Trà Xanh</strong> với công thức vượt trội có <strong>EGCG</strong> và <strong>Polyphenol</strong> chiết xuất từ lá trà xanh góp phần chống lão hóa, kháng khuẩn và loại bỏ sắc tố đen giúp dưỡng trắng da từ sâu bên trong và ngăn ngừa sự phát triển của tế bào ung thư da. Sản phẩm có Tannin và một số Vitamin, Khoáng chất thiết yếu cũng giúp se khít lỗ chân lông, sạch bã nhờn, bụi bẩn và khử đi các vi khuẩn trên da làm tăng độ đàn hồi, cho  da khỏe mạnh và trắng sáng.<br/> Trọng lượng tịnh: 10ml <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000442/19/CBMP-HCM"
+                   data-price="150.000đ"
+                   data-use="Rửa mặt thật sạch, sau đó thoa Serum lên. Mát-xa hai bên gò má theo chiều xoắn ốc để các hoạt chất dễ dàng thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Kem hay Sữa tắm trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Phenoxy Ethanol; Aloevera Extract Potassium Sorbate Sodium Benzoate; Propane-1,2,3-Triol; Propane-1,2-Diol; Triethanolamide; Polyphenol; Acrylamide/Sodium Acryloyldimethyl Taurate Copolymer (Anionic, PH2-10); EGCG/ Camellia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9333.jpg"
+                   data-image-1="/Content/Image/Intro/9319.png"
+                   data-image-2="/Content/Image/Retouch/8U9A9327.jpg"
+                   data-image-3="/Content/Image/Intro/1.png"
+                   data-image-4="/Content/Image/Retouch/8U9A5067.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A5073.jpg"
+                   data-image-6="/Content/Image/Retouch/8U9A5085.jpg">
+                    <b>  Serum trắng da mặt Trà Xanh 10ml</b>
+                </a>
+            </h5>
+            <p class="text-green-s">Da mặt trắng sáng sau hơn 01 tuần </p>
+        </div>
+        <!--2-->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+            <div class="image-container">
+                <a class="product-link" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Green Tea Whitening Face Cream"
+                   data-sub-title="Kem trắng da mặt Trà Xanh 10g"
+                   data-info="Kem trắng da mặt BiOshi Trà Xanh với công thức vượt trội có EGCG và Polyphenol chiết xuất từ lá trà xanh góp phần chống lão hóa, kháng khuẩn và loại bỏ sắc tố đen giúp dưỡng trắng da từ sâu bên trong và ngăn ngừa sự phát triển của tế bào ung thư da. Sản phẩm có Tannin và một số Vitamin, Khoáng chất thiết yếu cũng giúp se khít lỗ chân lông, sạch bã nhờn, bụi bẩn và khử đi các vi khuẩn trên da làm tăng độ đàn hồi, cho da khỏe mạnh và trắng sáng.<br/> Trọng lượng tịnh: 10g <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000742/19/CBMP-HCM"
+                   data-price="250.000đ"
+                   data-use="Thoa lớp kem mỏng lên mặt sau khi rửa mặt sạch. Thoa đều theo hình xoắn ốc rồi vỗ nhẹ để kem thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Serum trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; EGCG/ Camellia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9261.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9289.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9264.jpg"
+                   data-image-3="/Content/Image/anh_san_pham/Anh_minimum/8U9A9676.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A5055.jpg"
+                   data-image-4="/Content/Image/Retouch/8U9A5059.jpg">
+                    <img class="image " style="height:100%;width:auto;" src="~/Content/Image/Retouch/8U9A9261.jpg" />
+                </a>
+            </div>
+            <h5 class="text-center text-green">
+                <a class="product-link text-green" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Green Tea Whitening Face Cream"
+                   data-sub-title="Kem trắng da mặt Trà Xanh 10g"
+                   data-info="Kem trắng da mặt BiOshi Trà Xanh với công thức vượt trội có EGCG và Polyphenol chiết xuất từ lá trà xanh góp phần chống lão hóa, kháng khuẩn và loại bỏ sắc tố đen giúp dưỡng trắng da từ sâu bên trong và ngăn ngừa sự phát triển của tế bào ung thư da. Sản phẩm có Tannin và một số Vitamin, Khoáng chất thiết yếu cũng giúp se khít lỗ chân lông, sạch bã nhờn, bụi bẩn và khử đi các vi khuẩn trên da làm tăng độ đàn hồi, cho da khỏe mạnh và trắng sáng.<br/> Trọng lượng tịnh: 10g <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000742/19/CBMP-HCM"
+                   data-price="250.000đ"
+                   data-use="Thoa lớp kem mỏng lên mặt sau khi rửa mặt sạch. Thoa đều theo hình xoắn ốc rồi vỗ nhẹ để kem thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Serum trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; EGCG/ Camellia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9261.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9289.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9264.jpg"
+                   data-image-3="/Content/Image/anh_san_pham/Anh_minimum/8U9A9676.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A5055.jpg"
+                   data-image-4="/Content/Image/Retouch/8U9A5059.jpg">
+
+                    <b>  Kem trắng da mặt Trà Xanh 10g</b>
+                </a>
+            </h5>
+            <p class="text-green-s">Da mặt trắng sáng sau hơn 01 tuần </p>
+        </div>
+
+        <!--3-->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+            <div class="image-container">
+                <a class="product-link" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Green Tea Whitening Face Cream"
+                   data-sub-title="Kem trắng da mặt Trà Xanh 25g"
+                   data-info="Kem trắng da mặt BiOshi Trà Xanh với công thức vượt trội có EGCG và Polyphenol chiết xuất từ lá trà xanh góp phần chống lão hóa, kháng khuẩn và loại bỏ sắc tố đen giúp dưỡng trắng da từ sâu bên trong và ngăn ngừa sự phát triển của tế bào ung thư da. Sản phẩm có Tannin và một số Vitamin, Khoáng chất thiết yếu cũng giúp se khít lỗ chân lông, sạch bã nhờn, bụi bẩn và khử đi các vi khuẩn trên da làm tăng độ đàn hồi, cho da khỏe mạnh và trắng sáng.<br/> Trọng lượng tịnh: 10g <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 00742/19/CBMP-HCM"
+                   data-price="390.000đ"
+                   data-use="Thoa lớp kem mỏng lên mặt sau khi rửa mặt sạch. Thoa đều theo hình xoắn ốc rồi vỗ nhẹ để kem thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Serum trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; EGCG/ Camellia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9251.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9293.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9263.jpg"
+                   data-image-3="/Content/Image/Retouch/8U9A9277.jpg"
+                   data-image-4="/Content/Image/Retouch/8U9A5059.jpg"
+                   data-image-5="/Content/Image/anh_san_pham/Anh_minimum/8U9A9679.jpg"
+                   data-image-6="/Content/Image/Retouch/8U9A5055.jpg">
+                    <img class="image " src="~/Content/Image/Retouch/8U9A9251.jpg" />
+                </a>
+            </div>
+            <h5 class="text-center text-green">
+                <a class="product-link text-green" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Green Tea Whitening Face Cream"
+                   data-sub-title="Kem trắng da mặt Trà Xanh 25g"
+                   data-info="Kem trắng da mặt BiOshi Trà Xanh với công thức vượt trội có EGCG và Polyphenol chiết xuất từ lá trà xanh góp phần chống lão hóa, kháng khuẩn và loại bỏ  sắc tố đen giúp dưỡng trắng da từ sâu bên trong và ngăn ngừa sự phát triển của tế bào ung thư da. Sản phẩm có Tannin và một số Vitamin, Khoáng chất thiết yếu cũng giúp se khít lỗ chân lông, sạch bã nhờn, bụi bẩn và khử đi các vi khuẩn trên da làm tăng độ đàn hồi, cho da khỏe mạnh và trắng sáng.<br/> Trọng lượng tịnh: 10g <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000742/19/CBMP-HCM"
+                   data-price="390.000đ"
+                   data-use="Thoa lớp kem mỏng lên mặt sau khi rửa mặt sạch. Thoa đều theo hình xoắn ốc rồi vỗ nhẹ để kem thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Serum trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; EGCG/ Camellia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9251.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9293.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9263.jpg"
+                   data-image-3="/Content/Image/Retouch/8U9A9277.jpg"
+                   data-image-4="/Content/Image/Retouch/8U9A5059.jpg"
+                   data-image-5="/Content/Image/anh_san_pham/Anh_minimum/8U9A9679.jpg"
+                   data-image-6="/Content/Image/Retouch/8U9A5055.jpg">
+
+                    <b>   Kem trắng da mặt Trà Xanh 25g</b>
+                </a>
+            </h5>
+            <p class="text-green-s">Da mặt trắng sáng sau hơn 01 tuần</p>
+        </div>
+        <!--4-->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+            <div class="image-container">
+                <a class="product-link" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Cordyceps Whitening Face Cream"
+                   data-sub-title="Kem trắng da mặt Đông Trùng 25g"
+                   data-info="Kem trắng da mặt BiOshi Đông Trùng Hạ Thảo với công thức vượt trội, đặc biệt có ADENOSINE chiết xuất từ Đông Trùng Hạ Thảo góp phần chống kích ứng, kháng viêm da; chống lão hóa bởi giảm các vết rạn chân chim, làm đầy rãnh nhăn và hiện tượng chảy xệ trên da do kích thích tế bào tự sản xuất các sợi Ellastin và Collagen; đồng thời làm sáng da do thúc đẩy tế bào hoạt động và tái tạo tế bào mạnh nhằm đào thải các hắc tố gây sạm, nám, tàn nhang giúp da trắng hồng mịn màng không tì vết.<br/> Trọng lượng tịnh: 25g <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000447/19/CBMP-HCM"
+                   data-price="468.000đ"
+                   data-use="Thoa lớp kem mỏng lên mặt sau khi rửa mặt sạch. Thoa đều theo hình xoắn ốc rồi vỗ nhẹ để kem thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng hồng không tì vết sau 01 tuần. Khuyến khích dùng thêm với Serum trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; Adenosine/ Cordyceps Sinensis Extract."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9187.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9177.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9188.jpg"
+                   data-image-3="/Content/Image/Retouch/8U9A9722.jpg"
+                   data-image-4="/Content/Image/Intro/8U9A5305.jpg"
+                   data-image-5="/Content/Image/Intro/8U9A5310.jpg"
+                   data-image-6="/Content/Image/Intro/8U9A5312.jpg"
+                   data-image-7="/Content/Image/Intro/8U9A5336.jpg">
+                    <img class="image " src="~/Content/Image/Retouch/8U9A9187.jpg" />
+                </a>
+            </div>
+            <h5 class="text-center text-green">
+                <a class="product-link text-green" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Cordyceps Whitening Face Cream"
+                   data-sub-title="Kem trắng da mặt Đông Trùng 25g"
+                   data-info="Kem trắng da mặt BiOshi Đông Trùng Hạ Thảo với công thức vượt trội, đặc biệt có ADENOSINE chiết xuất từ Đông Trùng Hạ Thảo góp phần chống kích ứng, kháng viêm da; chống lão hóa bởi giảm các vết rạn chân chim, làm đầy rãnh nhăn và hiện tượng chảy xệ trên da do kích thích tế bào tự sản xuất các sợi Ellastin và Collagen; đồng thời làm sáng da do thúc đẩy tế bào hoạt động và tái tạo tế bào mạnh nhằm đào thải các hắc tố gây sạm, nám, tàn nhang giúp da trắng hồng mịn màng không tì vết.<br/> Trọng lượng tịnh: 25g <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000447/19/CBMP-HCM"
+                   data-price="468.000đ"
+                   data-use="Thoa lớp kem mỏng lên mặt sau khi rửa mặt sạch. Thoa đều theo hình xoắn ốc rồi vỗ nhẹ để kem thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng hồng không tì vết sau 01 tuần. Khuyến khích dùng thêm với Serum trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; Adenosine/ Cordyceps Sinensis Extract."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9187.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9177.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9188.jpg"
+                   data-image-3="/Content/Image/Retouch/8U9A9722.jpg"
+                   data-image-4="/Content/Image/Intro/8U9A5305.jpg"
+                   data-image-5="/Content/Image/Intro/8U9A5310.jpg"
+                   data-image-6="/Content/Image/Intro/8U9A5312.jpg"
+                   data-image-7="/Content/Image/Intro/8U9A5336.jpg">
+
+                    <b>  Kem trắng da mặt Đông Trùng 25g</b>
+                </a>
+            </h5>
+            <p class="text-green-s">Da mặt trắng hồng không tì vết sau hơn 01 tuần</p>
+        </div>
+        <!--5-->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+            <div class="image-container">
+                <a class="product-link" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Cordyceps Whitening Face Cream"
+                   data-sub-title="Kem trắng da mặt Đông Trùng 50g"
+                   data-info="Kem trắng da mặt BiOshi Đông Trùng Hạ Thảo với công thức vượt trội, đặc biệt có ADENOSINE chiết xuất từ Đông Trùng Hạ Thảo góp phần chống kích ứng, kháng viêm da; chống lão hóa bởi giảm các vết rạn chân chim, làm đầy rãnh nhăn và hiện tượng chảy xệ trên da do kích thích tế bào tự sản xuất các sợi Ellastin và Collagen; đồng thời làm sáng da do thúc đẩy tế bào hoạt động và tái tạo tế bào mạnh nhằm đào thải các hắc tố gây sạm, nám,  tàn nhang giúp da trắng hồng mịn màng không tì vết.<br/> Trọng lượng tịnh: 50g <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000447/19/CBMP-HCM"
+                   data-price="685.000đ"
+                   data-use="Thoa lớp kem mỏng lên mặt sau khi rửa mặt sạch. Thoa đều theo hình xoắn ốc rồi vỗ nhẹ để kem thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Serum trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; Adenosine/ Cordyceps Sinensis Extract."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9138.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9167.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9706.jpg"
+                   data-image-3="/Content/Image/Retouch/8U9A9727.jpg"
+                   data-image-4="/Content/Image/Retouch/8U9A5263.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A5267.jpg"
+                   data-image-6="/Content/Image/Retouch/8U9A5273.jpg">
+                    <img class="image " style="height:100%;width:auto;" src="~/Content/Image/Retouch/8U9A9138.jpg" />
+                </a>
+            </div>
+            <h5 class="text-center text-green">
+                <a class="product-link text-green" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Cordyceps Whitening Face Cream"
+                   data-sub-title="Kem trắng da mặt Đông Trùng 50g"
+                   data-info="Kem trắng da mặt BiOshi Đông Trùng Hạ Thảo với công thức vượt trội, đặc biệt có ADENOSINE chiết xuất từ Đông Trùng Hạ Thảo góp phần chống kích ứng, kháng viêm da; chống lão hóa bởi giảm các vết rạn chân chim, làm đầy rãnh nhăn và hiện tượng chảy xệ trên da do kích thích tế bào tự sản xuất các sợi Ellastin và Collagen; đồng thời làm sáng da do thúc đẩy tế bào hoạt động và tái tạo tế bào mạnh nhằm đào thải các hắc tố gây sạm, nám,  tàn nhang giúp da trắng hồng mịn màng không tì vết.<br/> Trọng lượng tịnh: 50g <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000447/19/CBMP-HCM"
+                   data-price="685.000đ"
+                   data-use="Thoa lớp kem mỏng lên mặt sau khi rửa mặt sạch. Thoa đều theo hình xoắn ốc rồi vỗ nhẹ để kem thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Serum trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; Adenosine/ Cordyceps Sinensis Extract."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9138.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9167.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9706.jpg"
+                   data-image-3="/Content/Image/Retouch/8U9A9727.jpg"
+                   data-image-4="/Content/Image/Retouch/8U9A5263.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A5267.jpg"
+                   data-image-6="/Content/Image/Retouch/8U9A5273.jpg">
+
+                    <b>Kem trắng da mặt Đông Trùng 50g</b>
+                </a>
+            </h5>
+            <p class="text-green-s">Da mặt trắng hồng không tì vết sau hơn 01 tuần</p>
+        </div>
+        <!--6-->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+            <div class="image-container">
+                <a class="product-link" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Cordyceps Whitening Face Serum"
+                   data-sub-title="Serum trắng da mặt Đông Trùng 25ml"
+                   data-info="Serum trắng da mặt BiOshi Đông Trùng Hạ Thảo với công thức vượt trội, đặc biệt có ADENOSINE chiết xuất từ Đông Trùng Hạ Thảo góp phần chống kích ứng, kháng viêm da; chống lão hóa bởi giảm các vết rạn chân chim, làm đầy rãnh nhăn và hiện tượng chảy xệ trên da do kích thích tế bào tự sản xuất các sợi Ellastin và Collagen; đồng thời làm sáng da do thúc đẩy tế bào hoạt động và tái tạo tế bào mạnh nhằm đào thải các hắc tố gây sạm, nám, tàn nhang giúp da trắng mịn hơn.<br/> Trọng lượng tịnh: 25ml <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000448/19/CBMP-HCM"
+                   data-price="350.000đ"
+                   data-use="Rửa mặt thật sạch, sau đó thoa Serum lên. Mát-xa hai bên gò má theo chiều xoắn ốc để các hoạt chất dễ dàng thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng hồng không tì vết sau 01 tuần. Khuyến khích dùng thêm với Kem hay Sữa tắm trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Phenoxy Ethanol; Aloevera Extract Potassium Sorbate Sodium Benzoate; Propane-1,2,3-Triol;Propane-1,2-Diol;Triethanolamide; Polyphenol; Acrylamide/Sodium Acryloyldimethyl Taurate Copolymer (Anionic, PH2-10);   Adenosine/ Cordyceps Sinensis Extract."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9208.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9221.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A9215.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9719.jpg"
+                   data-image-4="/Content/Image/Intro/8U9A5275.jpg"
+                   data-image-3="/Content/Image/Intro/8U9A5284.jpg">
+                    <img class="image " style="height:100%;width:auto;" src="~/Content/Image/Retouch/8U9A9208.jpg" />
+                </a>
+            </div>
+            <h5 class="text-center text-green">
+                <a class="product-link text-green" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Cordyceps Whitening Face Serum"
+                   data-sub-title="Serum trắng da mặt Đông Trùng 25ml"
+                   data-info="Serum trắng da mặt BiOshi Đông Trùng Hạ Thảo với công thức vượt trội, đặc biệt có ADENOSINE chiết xuất từ Đông Trùng Hạ Thảo góp phần chống kích ứng, kháng viêm da; chống lão hóa bởi giảm các vết rạn chân chim, làm đầy rãnh nhăn và hiện tượng chảy xệ trên da do kích thích tế bào tự sản xuất các sợi Ellastin và Collagen; đồng thời làm sáng da do thúc đẩy tế bào hoạt động và tái tạo tế bào mạnh nhằm đào thải các hắc tố gây sạm, nám, tàn nhang giúp da trắng mịn hơn.<br/> Trọng lượng tịnh: 25ml <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000448/19/CBMP-HCM"
+                   data-price="350.000đ"
+                   data-use="Rửa mặt thật sạch, sau đó thoa Serum lên. Mát-xa hai bên gò má theo chiều xoắn ốc để các hoạt chất dễ dàng thẩm thấu sâu vào da. Sử dụng cho các loại da với tần suất 2-3 lần mỗi ngày sẽ có làn da trắng hồng không tì vết sau 01 tuần. Khuyến khích dùng thêm với Kem hay Sữa tắm trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Phenoxy Ethanol; Aloevera Extract Potassium Sorbate Sodium Benzoate; Propane-1,2,3-Triol;Propane-1,2-Diol;Triethanolamide; Polyphenol; Acrylamide/Sodium Acryloyldimethyl Taurate Copolymer (Anionic, PH2-10);   Adenosine/ Cordyceps Sinensis Extract."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9208.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9221.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A9215.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9719.jpg"
+                   data-image-4="/Content/Image/Intro/8U9A5275.jpg"
+                   data-image-3="/Content/Image/Intro/8U9A5284.jpg">
+
+                    <b> Serum trắng da mặt Đông Trùng 25ml</b>
+                </a>
+            </h5>
+            <p class="text-green-s">Da mặt trắng hồng không tì vết sau hơn 01 tuần</p>
+        </div>
+        <!--7-->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+            <div class="image-container">
+                <a class="product-link" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Green Tea Facial Foam"
+                   data-sub-title="Sữa rửa mặt dưỡng trắng da Trà Xanh 100ml"
+                   data-info="Sữa rửa mặt dưỡng trắng da BiOshi Trà Xanh với công thức vượt trội có EGCG và Polyphenol  chiết xuất từ lá trà xanh góp phần chống lão hóa, kháng khuẩn và loại bỏ sắc tố đen giúp dưỡng trắng da từ sâu bên trong và ngăn ngừa sự phát triển của tế bào ung thư da. Sản phẩm có Tannin và một số Vitamin, Khoáng chất thiết yếu giúp se khít lỗ chân lông, sạch bã nhờn, bụi bẩn và khử đi các vi khuẩn trên da làm tăng độ đàn hồi, cho da khỏe mạnh và trắng sáng.<br/> Trọng lượng tịnh: 100ml <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000443/19/CBMP-HCM"
+                   data-price="175.000đ"
+                   data-use="Làm ướt mặt bằng nước; sau đó tạo bọt sữa rửa mặt với nước rồi mát-xa mặt nhẹ nhàng theo chuyển động tròn để dưỡng chất trong sữa rửa mặt thấm sâu vào trong, làm sạch trắng sáng da; tiếp đến rửa sạch lại bằng nước lạnh để giúp lỗ chân lông se khít. Sử dụng thường xuyên mỗi buổi sáng và tối sẽ cho làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Serum hay Kem trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; 1-(2,5-Dioxo-4-Imidazolidinyl)Urea; Sodium 2-(2-Dodecyloxysthoxy)Ethyl Sulphate; Sodium Dodecyl Sulphate; 1,3-bis(Hydroxymethyl)-5, 5-Dimethylimidazolidine-2, 4-Dione; Dusium Duhydrogen Ethylenediaminetetracetate; Poly(Acrylanide-Co-Diallyldimethylam; Cocamidopropyl Betaine; Acrylates Copolymer; Potassiumhydroxide; Sodium Chloride; Alovera Extract Potassim Sorbate Sodium Benzoate; Propane-1,2,3-Triol; EGCG/ Camelia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9303.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9300.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9305.jpg"
+                   data-image-3="/Content/Image/Intro/9685.jpg"
+                   data-image-4="/Content/Image/Retouch/8U9A5096.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A5103.jpg"
+                   data-image-6="/Content/Image/Retouch/8U9A5112.jpg">
+                    <img class="image " style="height:100%;width:auto;" src="~/Content/Image/Retouch/8U9A9303.jpg" />
+                </a>
+            </div>
+            <h5 class="text-center text-green">
+                <a class="product-link text-green" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Green Tea Facial Foam"
+                   data-sub-title="Sữa rửa mặt dưỡng trắng da Trà Xanh 100ml"
+                   data-info="Sữa rửa mặt dưỡng trắng da BiOshi Trà Xanh với công thức vượt trội có EGCG và Polyphenol  chiết xuất từ lá trà xanh góp phần chống lão hóa, kháng khuẩn và loại bỏ sắc tố đen giúp dưỡng trắng da từ sâu bên trong và ngăn ngừa sự phát triển của tế bào ung thư da. Sản phẩm có Tannin và một số Vitamin, Khoáng chất thiết yếu giúp se khít lỗ chân lông, sạch bã nhờn, bụi bẩn và khử đi các vi khuẩn trên da làm tăng độ đàn hồi, cho da khỏe mạnh và trắng sáng.<br/> Trọng lượng tịnh: 100ml <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000443/19/CBMP-HCM"
+                   data-price="175.000đ"
+                   data-use="Làm ướt mặt bằng nước; sau đó tạo bọt sữa rửa mặt với nước rồi mát-xa mặt nhẹ nhàng theo chuyển động tròn để dưỡng chất trong sữa rửa mặt thấm sâu vào trong, làm sạch trắng sáng da; tiếp đến rửa sạch lại bằng nước lạnh để giúp lỗ chân lông se khít. Sử dụng thường xuyên mỗi buổi sáng và tối sẽ cho làn da trắng sáng sau 01 tuần. Khuyến khích dùng thêm với Serum hay Kem trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng sáng, mịn màng cho làn da."
+                   data-ingredient="Aqua; 1-(2,5-Dioxo-4-Imidazolidinyl)Urea; Sodium 2-(2-Dodecyloxysthoxy)Ethyl Sulphate; Sodium Dodecyl Sulphate; 1,3-bis(Hydroxymethyl)-5,5-Dimethylimidazolidine-2,4-Dione; Dusium Duhydrogen Ethylenediaminetetracetate;Poly(Acrylanide-Co-Diallyldimethylam; Cocamidopropyl Betaine; Acrylates Copolymer; Potassiumhydroxide; Sodium Chloride; Alovera Extract Potassim Sorbate Sodium Benzoate; Propane-1,2,3-Triol; EGCG/ Camelia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9303.jpg"
+                   data-image-1="/Content/Image/Retouch/8U9A9300.jpg"
+                   data-image-2="/Content/Image/Retouch/8U9A9305.jpg"
+                   data-image-3="/Content/Image/Intro/9685.jpg"
+                   data-image-4="/Content/Image/Retouch/8U9A5096.jpg"
+                   data-image-5="/Content/Image/Retouch/8U9A5103.jpg"
+                   data-image-6="/Content/Image/Retouch/8U9A5112.jpg">
+
+                    <b> Sữa rửa mặt  Trà Xanh 100ml</b>
+                </a>
+            </h5>
+            <p class="text-green-s">Da mặt trắng sáng hơn sau hơn 01 tuần</p>
+        </div>
+        <!--8-->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+            <div class="image-container">
+                <a class="product-link" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Cordyceps Facial Foam"
+                   data-sub-title="Sữa rửa mặt Đông Trùng 100ml"
+                   data-info="Sữa rửa mặt trắng da BiOshi Đông Trùng Hạ Thảo với công thức vượt trội, đặc biệt có ADENOSINE chiết xuất từ Đông Trùng Hạ Thảo góp phần chống kích ứng, kháng viêm da; chống lão hóa bởi giảm các vết rạn chân chim, làm đầy rãnh nhăn và hiện tượng chảy xệ trên da do kích thích tế bào tự sản xuất các sợi Ellastin và Collagen; đồng thời làm sáng da do thúc đẩy tế bào hoạt động và tái tạo tế bào mạnh nhằm đào thải các hắc tố gây sạm, nám, tàn nhang giúp da trắng mịn hơn.<br/> Trọng lượng tịnh: 100ml <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000449/19/CBMP-HCM"
+                   data-price="325.000đ"
+                   data-use="Làm ướt mặt bằng nước; sau đó tạo bọt sữa rửa mặt với nước rồi mát-xa mặt nhẹ nhàng theo chuyển động tròn để dưỡng chất trong sữa rửa mặt thấm sâu vào trong, làm sạch trắng sáng da; tiếp đến rửa sạch lại bằng nước lạnh để giúp lỗ chân lông se khít. Sử dụng thường xuyên mỗi buổi sáng và tối sẽ cho làn da trắng hồng không tì vết sau 01 tuần. Khuyến khích dùng thêm với Serum hay Kem trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng hồng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; EGCG/ Camellia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/8U9A9097.jpg"
+                   data-image-1="/Content/Image/Intro/9099.png"
+                   data-image-2="/Content/Image/Intro/9112.png"
+                   data-image-3="/Content/Image/Intro/9099.png"
+                   data-image-4="/Content/Image/Intro/8U9A5294.jpg"
+                   data-image-5="/Content/Image/Intro/8U9A5301.jpg">
+                    <img class="image " style="height:100%;width:auto;" src="~/Content/Image/Retouch/8U9A9097.jpg" />
+                </a>
+            </div>
+            <h5 class="text-center text-green">
+                <a class="product-link text-green" href="#" data-toggle="modal"
+                   data-target="#modal-product-detail"
+                   data-title="Cordyceps Facial Foam"
+                   data-sub-title="Sữa rửa mặt Đông Trùng 100ml"
+                   data-info="Sữa rửa mặt trắng da BiOshi Đông Trùng Hạ Thảo với công thức vượt trội, đặc biệt có ADENOSINE chiết xuất từ Đông Trùng Hạ Thảo góp phần chống kích ứng, kháng viêm da; chống lão hóa bởi giảm các vết rạn chân chim, làm đầy rãnh nhăn và hiện tượng chảy xệ trên da do kích thích tế bào tự sản xuất các sợi Ellastin và Collagen; đồng thời làm sáng da do thúc đẩy tế bào hoạt động và tái tạo tế bào mạnh nhằm đào thải các hắc tố gây sạm, nám, tàn nhang giúp da trắng mịn hơn.<br/> Trọng lượng tịnh: 100ml <br/>  Tiêu chuẩn chất lượng: ISO 9001: 2015 <br/>Số công bố: 000449/19/CBMP-HCM"
+                   data-price="325.000đ"
+                   data-use="Làm ướt mặt bằng nước; sau đó tạo bọt sữa rửa mặt với nước rồi mát-xa mặt nhẹ nhàng theo chuyển động tròn để dưỡng chất trong sữa rửa mặt thấm sâu vào trong, làm sạch trắng sáng da; tiếp đến rửa sạch lại bằng nước lạnh để giúp lỗ chân lông se khít. Sử dụng thường xuyên mỗi buổi sáng và tối sẽ cho làn da trắng hồng không tì vết sau 01 tuần. Khuyến khích dùng thêm với Serum hay Kem trắng da BiOshi hoặc Kem dưỡng da BiOri để tăng cường trắng hồng, mịn màng cho làn da."
+                   data-ingredient="Aqua; Glyceryl  Stearate; Polyglyceryl-10 Stearate; Behenyl Alcohol; Polyglyceryl-10 Pentastearate; Sodium Stearoyl Lactylate; Crocus Sativus Flower Extract; Royal Jelly Extract; Squalane; Butylene Glycol; Polyacrylate-13; Polyisobutene; Ceramide 3; Sodium Hyaluronate; Ethylhexylglycerin; Chlorphenesin; Propanediol; Ganodrma Sinensis Extract; Panax Ginseng Extract; Elastin; EGCG/ Camellia Sinensis Polyphenol."
+                   data-image-main="/Content/Image/anh_san_pham/Anh_maximum/    Retouch/8U9A9097.jpg"
+                   data-image-1="/Content/Image/Intro/9099.png"
+                   data-image-2="/Content/Image/Intro/9112.png"
+                   data-image-3="/Content/Image/Intro/9099.png"
+                   data-image-4="/Content/Image/Intro/8U9A5294.jpg"
+                   data-image-5="/Content/Image/Intro/8U9A5301.jpg">
+
+                    <b>  Sữa rửa mặt Đông Trùng 100ml</b>
+                </a>
+            </h5>
+            <p class="text-green-s">Da mặt trắng hồng không tì vết sau hơn 01 tuần</p>
+        </div>
+
+    </div>
+</section>
+@section scripts {
+    <script>
+        $('.product-link').on('click', function () {
+            $('#modal-product-detail .info').html($(this).data('info'));
+            $('#modal-product-detail .price').html($(this).data('price'));
+            $('#modal-product-detail .detail').html($(this).data('detail'));
+            $('#modal-product-detail .title').html($(this).data('title'));
+            $('#modal-product-detail .sub-title').html($(this).data('sub-title'));
+            $('#modal-product-detail .use').html($(this).data('use'));
+            $('#modal-product-detail .ingredient').html($(this).data('ingredient'));
+            $("#modal-product-detail .image-main").attr("src", $(this).data('image-main'));
+            for (let i = 1; i <= 9; i++) {
+                let ClassNameImg = "image-" + i;
+                let SrcImg = $(this).data(ClassNameImg);
+                console.log(SrcImg);
+                if (SrcImg) {
+                    $("#modal-product-detail ." + ClassNameImg).attr("src", $(this).data(ClassNameImg));
+                }
+                else {
+                    console.log(i);
+                    $("#modal-product-detail ." + ClassNameImg).attr("src", "");
+                }
+            }
+        })
+        $(".search__product").change(function () {
+            document.location.href = $(this).val();
+        });
+    </script>
+}

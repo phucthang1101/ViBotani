@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7HTCPF');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+    <meta charset="utf-8" />
+    <link rel="icon" href="~/Content/Image/Logo/nav-logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViBotani - @ViewBag.Title</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    @Styles.Render("~/Content/css")
+    
+    <link rel="stylesheet" href="/Content/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Content/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7HTCPF"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav id="mynav" class="pl-0 pr-3 navbar navbar-expand-lg navbar-light fixed-top">
+        <button class="ml-2 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto pl-5">
+                <li class="nav-item">
+                    <a class="nav-link" href="~/gioi-thieu">Giới thiệu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sản phẩm
+                    </a>
+                    <div class="dropdown-menu text-green" aria-labelledby="navbarDropdown">
+                        <div class="row px-3" style="overflow:hidden">
+                            <div class="col-lg-3 col-md-6 col-6">
+                                <a href="/san-pham-trang-da"><h3 class="text-green-s text-center">Sản phẩm trắng da</h3></a>
+                                <div class="pl-3 pl-md-5 ml-md-5">
+                                    <a href="/san-pham-trang-da/trang-mat"><p class="mb-0 text-green">Trắng mặt </p></a>
+                                    <a href="/san-pham-trang-da/trang-cap-toc"><p class="mb-0 text-green">Trắng cấp tốc</p></a>
+                                    <a href="/san-pham-trang-da/trang-toan-than"><p class="mb-3 text-green">Trắng toàn thân</p></a>
+                                </div>
+
+
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-6 ">
+
+                                <h3 class="text-green-s text-center">Sản phẩm đẹp da</h3>
+                                <div class="pl-3 pl-md-5 ml-md-5">
+                                    <p class="mb-0">Mặt nạ</p>
+                                    <p class="mb-0">Trị mụn</p>
+                                    <p class="mb-0">Ngừa mụn </p>
+                                    <p class="mb-0">Dưỡng da</p>
+                                    <p class="mb-0">Chống nắng</p>
+                                    <p class="mb-3">Tẩy tế bào chết</p>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-6 ">
+                                <h3 class="text-green-s text-center">Mỹ phẩm làm đẹp</h3>
+                                <div class="pl-3 pl-md-5 ml-md-5">
+                                    <p class="mb-0">Son</p>
+                                    <p class="mb-0">Phấn</p>
+                                    <p class="mb-0">Dầu gội</p>
+                                    <p class="mb-0">Nước hoa</p>
+                                    <p class="mb-0">Gel vuốt tốc</p>
+                                    <p class="mb-3">Thuốc nhuộm tóc</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-6">
+
+                                <h3 class="text-green-s text-center">Sản phẩm đặc trị</h3>
+                                <div class="pl-3 pl-md-5 ml-md-5">
+                                    <p class="mb-0">Mịn da</p>
+                                    <p class="mb-0">Trị thâm</p>
+                                    <p class="mb-3">Bóng da</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/tu-van-da">Tư vấn da</a>
+                </li>
+            </ul>
+        </div>
+        <a class="navbar-brand" href="/">
+            <img class="img-fluid nav-img" src="~/Content/Image/Logo/nav-logo.png" />
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto pr-5">
+                <li class="nav-item">
+                    <a class="nav-link" href="~/tin-tuc">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#modal-KM" href="#">Khuyến mãi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/question">Hỏi đáp</a>
+                </li>
+               @* <li class="nav-item">
+                    <a class="nav-link" href="/home/question">Đại lý</a>
+                </li> *@
+            </ul>
+        </div>
+    </nav>
+    <div id="contact" class="text-center">
+        <a>
+            <i style="transform: rotate(-40deg);" class="fa fa-phone-volume"></i>
+            <span> Hotline: 0383 038 039</span>
+        </a>
+    </div>
+    <!-- Modal -->
+    <!--Product modal-->
+    <div class="modal fade" id="modal-product" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content" style="border:none; position:relative;">
+
+                <div class="modal-body p-0" style="border:none; position:relative;">
+                    <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row m-0">
+                        <div class="col-lg-5 col-sm-12 p-0">
+                            <img class="w-100 " src="~/Content/Image/8U9A9167.jpg" />
+                        </div>
+                        <div class="col-lg-7">
+                            <h3 class="text-green-s mt-5 text-center">Sản phẩm trắng da</h3>
+                            <h5 class="text-center"><i>White Beauty from Nature</i></h5>
+                            <p class="text-green text-justify f-19 px-2 py-3">
+                                Một làn da trắng hồng, thêm vào đó là chống lão hóa, không bị nám, sạm, chảy xệ, mụn và tàn nhang cũng như chống nắng luôn là niềm ao ước của chị em, nhưng điều quan trọng nhất là sự an toàn để có được làn da trắng mịn như mong ước. Biết được nhu cầu này, ViBotani đã tung vào thị trường Việt Nam dòng mỹ phẩm dưỡng trắng da BiOshi, theo nghĩa tiếng Nhật là “Người làm đẹp, trắng da” với hy vọng góp phần làm tăng vẻ đẹp cho Người Việt. Hiện nay, BiOshi có các sản phẩm dưỡng trắng da mặt và toàn thân như kem, serum, sữa rửa mặt và sữa tắm với 100% có dưỡng chất thiết yếu được chiết xuất từ thiên nhiên như Đông Trùng Hạ Thảo, Trà Xanh,... Những dòng sản phẩm của BiOshi mang lại làn da trắng mịn như mong ước chỉ sau 02 tuần dùng. Ngoài ra, với những chị em mong muốn có được ngay làn da trắng sáng tức thì (chỉ sau 01 lần dùng, tác dụng trong ngày), hai loại sữa tắm trắng cấp tốc BiOshi Đông Trùng Hạ Thảo và Trà Xanh là những sản phẩm nên có bên mình.
+                            </p>
+                            <p class="text-green f-19">Bao gồm các dòng sản phẩm: </p>
+                            <ul class="text-green f-19">
+                                <li>Trắng mặt </li>
+                                <li>Trắng toàn thân </li>
+                                <li>Trắng cấp tốc</li>
+                            </ul>
+                            <div class="text-center">
+                                <a href="/san-pham-trang-da" class="btn bg text-green border-1 px-4">Tới trang sản phẩm</a>
+                            </div>
+                            <hr />
+                            <div class="row m-0 relate justify-content-center">
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <img class="w-100" src="~/Content/Image/samphamtrangda-1.jpg" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <img class="w-100" src="~/Content/Image/samphamtrangda-2.jpg" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <img class="w-100" src="~/Content/Image/samphamtrangda-3.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal KM-->
+    <div class="modal fade" id="modal-KM" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content" style="border:none; position:relative;">
+
+                <div class="modal-body p-0" style="border:none; position:relative;">
+                    <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="KM-caroussel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#KM-caroussel" data-slide-to="0" class="active"></li>
+                        <li data-target="#KM-caroussel" data-slide-to="1"></li>
+                        <li data-target="#KM-caroussel" data-slide-to="2"></li>
+                        <li data-target="#KM-caroussel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/Content/Image/KM4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="~/Content/Image/KM1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Content/Image/KM2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Content/Image/KM3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev ml-5" href="#KM-caroussel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next mr-5" href="#KM-caroussel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal template-->
+    <div class="modal fade" id="modal-product" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content" style="border:none; position:relative;">
+
+                <div class="modal-body p-0" style="border:none; position:relative;">
+                    <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div style="position:relative;">
+            @RenderBody()
+        </div>
+        <!--footer-->
+        <div>
+            <footer style="border-top: 1px solid black" class="bg--s">
+                <div class="row text-center mx-0">
+                    <div class="col-md-12 col-lg-6 left mt-3">
+                        <div class="row mx-0">
+                            <div class="col-12 col-md-8 text-center px-md-0">
+                                <img class="img-fluid w-75 mt-2 mb-2" src="~/Content/Image/Logo/nav-logo.png" />
+                                <h6 class="text-green-s">
+                                    Công ty TNHH ViBotani Việt Nam:
+                                </h6>
+                                <small class="text-green text-left pl-3 text-center"> 36 Đặng Tất, Phường Tân Định, Quận 1, Tp.HCM </small>
+                                <div class="row m-0">
+                                    <div class="col-5 px-0 ">
+                                        <p class="pt-2 text-green">
+                                            <strong>MST: </strong> 0315458763
+                                        </p>
+                                    </div>
+                                    <div class="col-7 px-0 ">
+                                        <p class="text-green pt-2">
+                                            <strong>Email: </strong> info@vibotani.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-4 d-none d-md-block">
+                                <ul style="list-style-type:none" id="footer-nav" class="mt-2">
+                                    <li><a class="text-green" href="#">Liên kết</a></li>
+                                    <li><a class="text-green" href="#">Giới thiệu</a></li>
+                                    <li><a class="text-green" href="san-pham-trang-da">Sản phẩm</a></li>
+                                    <li><a class="text-green" href="/advisory">Tư vấn da</a></li>
+                                    <li><a class="text-green" href="/home/blog_list">Tin tức</a></li>
+                                    <li><a class="text-green" href="#">Khuyến mãi</a></li>
+                                    <li><a class="text-green" href="/home/question">Hỏi đáp</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 px-2">
+                        <h5 class="mt-3 text-green-s pl-5">Gởi thông tin để nhận tư vấn từ ViBotani:</h5>
+                        <form id="form-contact">
+                            <div class="form-group row mx-0">
+                                <label class="col-4 col-sm-2 col-md-2">Tên</label>
+                                <input type="text" class="form-control col-8 col-sm-9 col-md-9 bg-s border-1" placeholder="Nhập tên của bạn" />
+                            </div>
+                            <div class="row mx-0">
+                                <div class="col-md-6 col-sm-12 px-0  mx-0">
+                                    <div class="form-group row mx-0">
+                                        <label class="col-4 col-sm-2 col-md-4">Email</label>
+                                        <input class="form-control bg-s border-1 col-8 col-sm-9 col-md-8" placeholder="Nhập email của bạn" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 px-0  mx-0">
+                                    <div class="form-group row mx-0">
+                                        <label class="col-4 col-sm-2 col-md-3">Phone</label>
+                                        <input class="form-control bg-s border-1 col-8 col-sm-9 col-md-7" placeholder="Nhập số điện thoại" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mx-0">
+                                <label class="col-4 col-sm-2 col-md-2">Yêu cầu</label>
+                                <textarea class="form-control col-8 col-sm-9 col-md-9 bg-s border-1" rows="2" placeholder="Nhập yêu cầu của bạn"></textarea>
+                            </div>
+                            <button type="button" class="text-center btn border-1 text-green pl-4 pr-4 mt-3">Gửi thông tin</button>
+                        </form>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Content/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="~/Content/js/main.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+    <!-- Start of HubSpot Embed Code -->
+   @* <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6163030.js"></script>*@
+    <!-- End of HubSpot Embed Code -->
+</body>
+</html>

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<ViBotani.Models.News>
+@{
+    ViewBag.Title = "Danh sách bài viết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row bg-s mx-0">
+
+    <div class="col-md-4 col-12  px-3"> 
+
+        <h3 class="text-green-s px-2 text-center my-3"><b>Nghiên cứu sản phẩm</b></h3>
+        @{
+
+            int count = 0;
+            for (int i = 0; i < Model.Count() - 1; i++)
+            {
+
+                var item = Model.ElementAtOrDefault(i);
+                var url = "tin-tuc" + "/" + item.MetaTitle + "/" + item.ID;
+                if (item.Category == "Nghiên cứu sản phẩm" && count < 2)
+                {
+                    count = count + 1;
+                    <div class="col-10 mb-3 mx-auto intro__write">
+                        <a href="@url">
+                            <img class="w-100 mx-auto d-block" src="@item.Image" />
+                        </a>
+                        <a href="@url">
+                            <p class="text-green-s mb-1 title">
+                                <b>
+                                   @Html.Raw(item.Name)
+                                </b>
+                            </p>
+                        </a>
+                        <p class="text-green mb-1 description">@Html.Raw(item.Description)</p>
+                        <small class="pb-4 time">
+                            <i class="fa fa-clock"></i> @Html.Raw(item.CreatedDate)
+                        </small>
+                        <hr />
+                    </div>
+                }
+            }
+                   }
+    </div>
+    <div class="col-md-4 col-12 px-3">
+        <h3 class="text-green-s px-2 text-center my-3"><b>Sự kiện tung hàng</b></h3>
+        @{
+            count = 0;
+            for (int i = 0; i < Model.Count() - 1; i++)
+            {
+                var item = Model.ElementAtOrDefault(i);
+                var url = "tin-tuc" + "/" + item.MetaTitle + "/" + item.ID;
+                if (item.Category == "Sự kiện tung hàng" && count < 2)
+                {
+                    count = count + 1;
+                    <div class="col-10 mx-auto mb-3">
+                        <a href="@url">
+                            <img class="w-100" src="@item.Image" />
+                        </a>
+                        <a href="@url">
+                            <h5 class="text-green-s mb-1" style="font-size:18px;">
+                                <b>
+                                    @Html.Raw(item.Name)
+                                </b>
+                            </h5>
+                        </a>
+                        <p class="text-green mb-1" style="font-size:14px;">
+                           @Html.Raw(item.Description)
+                        </p>
+                        <small class="pb-4">
+                            <i class="fa fa-clock"></i>  @Html.Raw(item.CreatedDate)
+                        </small>
+                        <hr />
+                    </div>
+
+                }
+            }
+
+            }
+        </div>
+    <div id="near-blog" class="col-md-4 col-12 px-3">
+        <h3 class="text-green-s px-2 text-center my-3"><b>Gắn kết cộng đồng</b></h3>
+        @{
+            count = 0;
+            for (int i = 0; i < Model.Count() - 1; i++)
+            {
+                var item = Model.ElementAtOrDefault(i);
+                var url = "tin-tuc" + "/" + item.MetaTitle + "/" + item.ID;
+                if (item.Category == "Gắn kết cộng đồng" && count < 2)
+                {
+                    count = count + 1;
+                    <div class="col-10 mx-auto mb-3">
+                        <a href="@url">
+                            <img class="w-100" src="@item.Image" />
+                        </a>
+                        <a href="@url">
+                            <h5 class="text-green-s mb-1" style="font-size:18px;"><b>@Html.Raw(item.Name)</b></h5>
+                        </a>
+                        <p class="text-green mb-1" style="font-size:14px;">@Html.Raw(item.Description)</p>
+                        <small class="pb-4">
+                            <i class="fa fa-clock"></i>  @Html.Raw(item.CreatedDate)
+                        </small>
+                        <hr />
+                    </div>
+                    }
+                }
+            }
+            </div>
+</div>

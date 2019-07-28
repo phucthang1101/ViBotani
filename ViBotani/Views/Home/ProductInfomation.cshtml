@@ -1,0 +1,281 @@
+﻿@model IEnumerable<string>
+@{
+    ViewBag.Title = "ProductInfomation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var Product = ViewBag.Product;
+}
+
+
+<div class="row align-items-md m-0 bg-s">
+    <div class="col-md-5 mt-3 col-sm-12">
+        <img class="w-100 mb-3 image-main" src="@Product.Image" />
+
+        <div class="owl-carousel owl-theme p-2" id="product-detail-carousel">
+            @{
+                int count = 0;
+                foreach (var item in Model)
+                {
+                    <div class="item">
+                        <img class="image-@count" src="@item" />
+
+                    </div>
+                    count++;
+                }
+            }
+
+        </div>
+    </div>
+
+
+    <div class="col-md-7 col-sm-12 pl-3 pr-5">
+        <div class="col-12 col-md-8 mx-auto">
+            <img class="w-100" src="~/Content/Image/Logo/Logo_BiOshi.png" />
+        </div>
+        <h3 class="text-green text-center title" style="font-weight:bold;">@Product.Heading</h3>
+        <h5 class="text-center text-green-s sub-title"><i>@Product.Name</i></h5>
+        <h5 class="text-green-s" style="font-weight:bold">
+          @Html.Raw(Product.Detail)
+        </h5>
+
+        <div class="text-center pb-3">
+            <button data-toggle="modal" data-target="#modal-agency-condition" class="btn text-green bg-s  border-1">Đăng ký làm đại lý của ViBotani</button>
+        </div>
+    </div>
+
+
+</div>
+<!--Modal Agency Condition-->
+<div class="modal fade" id="modal-agency-condition" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content" style="border:none; position:relative;">
+
+            <div class="modal-body shadow-s bg-s p-0" style="border:1px solid gray; position:relative;">
+                <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="row m-0 py-4 px-3">
+                    <div class="col-lg-7">
+                        <!--cross 1-->
+                        <div class="row m-0">
+                            <div class="col-lg-3 col-4">
+                                <div class="hexagon hexagon-1">
+                                    <span></span>
+                                    <div class="inside">
+                                        01
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-8 pt-lg-3">
+                                <h4 class="text-green-s">Đam mê lĩnh vực hóa mỹ phẩm</h4>
+                            </div>
+                        </div>
+                        <!--cross 2-->
+                        <div class="row m-0">
+                            <div class="row m-0">
+                                <div class="col-lg-2 d-none d-lg-block">
+                                </div>
+                                <div class="col-lg-3 col-4">
+                                    <div class="hexagon hexagon-2">
+                                        <span></span>
+                                        <div class="inside">
+                                            02
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 pt-3 col-8">
+                                    <h4 class="text-green-s"> Có niềm đam mê kinh doanh</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!--cross 3-->
+                        <div class="row m-0">
+                            <div class="row m-0">
+                                <div class="col-lg-4  d-none d-lg-block">
+                                </div>
+                                <div class="col-lg-3 col-4">
+                                    <div class="hexagon hexagon-3">
+                                        <span></span>
+                                        <div class="inside">
+                                            03
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-8 pt-3">
+                                    <h5 class="text-green-s">Có thời gian tương tác bán hàng</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!--cross 4-->
+                        <div class="row m-0">
+                            <div class="row m-0">
+                                <div class="col-lg-2 d-none d-lg-block">
+                                </div>
+                                <div class="col-lg-3 col-4">
+                                    <div class="hexagon hexagon-4">
+                                        <span></span>
+                                        <div class="inside">
+                                            04
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 pt-3 col-8">
+                                    <h4 class="text-green-s">Có tài chính nhất định để kinh doanh</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!--cross 5-->
+                        <div class="row m-0">
+                            <div class="col-lg-3 col-4">
+                                <div class="hexagon hexagon-5">
+                                    <span></span>
+                                    <div class="inside">
+                                        05
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="col-lg-4 cross cross-1  d-none d-lg-block">
+
+                                </div>*@
+                            <div class="col-lg-5 col-8 pt-lg-3">
+                                <h4 class="text-green-s">Tuân thủ chính sách bán hàng</h4>
+                            </div>
+                        </div>
+                        @*<small><i class="text-green">Xin liên hệ 0383.038.039 để hỏi thêm thông tin</i></small>*@
+                    </div>
+                    <div class="col-lg-5 bg-white right mt-4">
+                        <h3 class="mt-2 text-green text-center">QUYỀN LỢI CỦA CÁC ĐẠI LÝ</h3>
+                        <div class="bg-s py-1 inside">
+                            <ul>
+                                <li class="text-green-s">
+                                    Sản phẩm chính hãng với công dụng vượt trội, sản xuất theo tiêu chuẩn quốc tế ISO 9001
+                                </li>
+                                <li class="text-green-s">
+                                    Thương hiệu sản phẩm cao cấp và đáng tin cậy
+                                </li>
+                                <li class="text-green-s">
+                                    Thương hiệu được Người nổi tiếng tin dùng và quảng cáo sản phẩm
+                                </li>
+                                <li class="text-green-s">
+                                    Đảm bảo công bằng trong chính sách và lợi nhuận thỏa đáng
+                                </li>
+                                <li class="text-green-s">
+                                    Có chính sách hỗ trợ mở rộng mạng lưới bán hàng
+                                </li>
+                                <li class="text-green-s">
+                                    Có chính sách lấy hàng tích lũy trong thời gian đầu
+                                </li>
+                                <li class="text-green-s">
+                                    Luôn có chính sách thưởng định kỳ khi đạt chỉ tiêu
+                                </li>
+                                <li class="text-green-s">
+                                    Được đào tạo định kỳ bởi các Chuyên gia và Tổ chức uy tín
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="text-center my-2">
+                            <button data-toggle="modal" data-target="#modal-agency-register" type="button" class="btn bg px-4 py-1 border-1  r-close">
+                                Cung cấp thông tin đại lý
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal Agency Register-->
+<div class="modal fade" id="modal-agency-register" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content" style="border:none; position:relative;">
+
+            <div class="modal-body p-0" style="border:none; position:relative;">
+                <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h2 class="text-center text-green-s">Thông tin đăng ký đại lý ViBotani</h2>
+                <form class="p-2">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="form-group row">
+                                <label class="col-2">Tên</label>
+                                <input class="form-control bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập tên của bạn" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="form-group row">
+                                <label class="col-2">Email</label>
+                                <input class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập email của bạn" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="form-group row">
+                                <label class="col-2">SĐT 1</label>
+                                <input class="form-control p-1 bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập số điện thoại" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="form-group row">
+                                <label class="col-2">SĐT 2</label>
+                                <input class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập số điện thoại" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2">Địa chỉ</label>
+                        <input type="text" class="form-control col-9  bg-s border-1" placeholder="Nhập địa chỉ của bạn" />
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2">Ghi chú</label>
+                        <textarea class="form-control col-9 bg-s border-1" rows="4" placeholder="Nhập ghi chú của bạn"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="text-center btn border-1 text-green pl-4 pr-4">Gửi thông tin</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*@section scripts {
+        <script>
+            $('.product-link').on('click', function () {
+                $('#modal-product-detail .info').html($(this).data('info'));
+                $('#modal-product-detail .price').html($(this).data('price'));
+                $('#modal-product-detail .detail').html($(this).data('detail'));
+                $('#modal-product-detail .title').html($(this).data('title'));
+                $('#modal-product-detail .sub-title').html($(this).data('sub-title'));
+                $('#modal-product-detail .use').html($(this).data('use'));
+                $('#modal-product-detail .ingredient').html($(this).data('ingredient'));
+                $("#modal-product-detail .image-main").attr("src", $(this).data('image-main'));
+                for (let i = 1; i <= 9; i++) {
+                    let ClassNameImg = "image-" + i;
+                    let SrcImg = $(this).data(ClassNameImg);
+                    console.log(SrcImg);
+                    if (SrcImg) {
+                        $("#modal-product-detail ." + ClassNameImg).attr("src", $(this).data(ClassNameImg));
+                    }
+                    else {
+                        console.log(i);
+                        $("#modal-product-detail ." + ClassNameImg).attr("src", "");
+                    }
+                }
+                //$("#modal-product-detail .image-1").attr("src", $(this).data('image-1'));
+                //$("#modal-product-detail .image-2").attr("src", $(this).data('image-2'));
+                //$("#modal-product-detail .image-3").attr("src", $(this).data('image-3'));
+                //$("#modal-product-detail .image-4").attr("src", $(this).data('image-4'));
+                //$("#modal-product-detail .image-5").attr("src", $(this).data('image-5'));
+                //$("#modal-product-detail .image-6").attr("src", $(this).data('image-6'));
+                //$("#modal-product-detail .image-7").attr("src", $(this).data('image-7'));
+            })
+            $(".search__product").change(function () {
+                document.location.href = $(this).val();
+            });
+        </script>
+    }*@
