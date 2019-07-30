@@ -48,7 +48,7 @@ namespace ViBotani.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Create([Bind(Include = "ID,Name,MetaTitle,Description,Product_Line,Image,Detail,CreatedDate,List_Image,Heading,Kindof_Product,Meta_ProductLine,Meta_Kindof")] Product product)
+        public ActionResult Create([Bind(Include = "ID,Name,MetaTitle,Description,Product_Line,Image_Outside,Image_Main,Detail,CreatedDate,List_Image,Heading,Kindof_Product,Meta_ProductLine,Meta_Kindof")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +63,7 @@ namespace ViBotani.Areas.Admin.Controllers
                         //    Response.Write(m[1].Groups["src"].Value);
                         //    Response.Write(m[2].Groups["src"].Value);
                         //}
-                        product.CreatedDate = DateTime.Now;
+                    product.CreatedDate = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -93,7 +93,8 @@ namespace ViBotani.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,MetaTitle,Description,Product_Line,Image,Detail,CreatedDate,List_Image,Heading,Kindof_Product,Meta_ProductLine,Meta_Kindof")] Product product)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "ID,Name,MetaTitle,Description,Product_Line,Image_Outside,Image_Main,Detail,CreatedDate,List_Image,Heading,Kindof_Product,Meta_ProductLine,Meta_Kindof")] Product product)
         {
             if (ModelState.IsValid)
             {

@@ -23,14 +23,15 @@
     <Property Name="MetaTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Product_Line" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Image_Main" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="List_Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="List_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Heading" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Kindof_Product" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="Meta_ProductLine" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
     <Property Name="Meta_Kindof" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Image_Outside" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityContainer Name="VibotaniDBEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="News" EntityType="Self.News" />

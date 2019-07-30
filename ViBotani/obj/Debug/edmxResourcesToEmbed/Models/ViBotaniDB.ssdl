@@ -23,14 +23,15 @@
     <Property Name="MetaTitle" Type="varchar" MaxLength="250" />
     <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="Product_Line" Type="nvarchar" MaxLength="250" />
-    <Property Name="Image" Type="nvarchar" MaxLength="250" />
+    <Property Name="Image_Main" Type="nvarchar" MaxLength="250" />
     <Property Name="Detail" Type="nvarchar(max)" />
     <Property Name="CreatedDate" Type="datetime" />
-    <Property Name="List_Image" Type="nvarchar" MaxLength="250" />
+    <Property Name="List_Image" Type="nvarchar(max)" />
     <Property Name="Heading" Type="nvarchar" MaxLength="500" />
     <Property Name="Kindof_Product" Type="nvarchar" MaxLength="250" />
     <Property Name="Meta_ProductLine" Type="varchar" MaxLength="250" />
     <Property Name="Meta_Kindof" Type="varchar" MaxLength="250" />
+    <Property Name="Image_Outside" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityContainer Name="VibotaniDBModelStoreContainer">
     <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />

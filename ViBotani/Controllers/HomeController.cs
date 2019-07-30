@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
@@ -24,32 +25,56 @@ namespace ViBotani.Controllers
 
             return View();
         }
-        public ActionResult Product()
+        public ActionResult Product(string Meta_Kindof=null)
         {
             using (var context = new VibotaniDBEntities2())
             {
-          
-                List<Product> data = context.Products.SqlQuery("SELECT * FROM dbo.Product").OrderByDescending(x => x.ID).ToList();
+                List<Product> data = new List<Product>();
+                if (Meta_Kindof == null)
+                    data = context.Products.SqlQuery("SELECT * FROM dbo.Product").OrderBy(x => x.ID).ToList();
+                else
+                    data = context.Products.SqlQuery("[dbo].[SelectProduct] @Meta_Kindof", new SqlParameter("Meta_Kindof", Meta_Kindof)).OrderByDescending(x => x.ID).ToList();
                 return View(data);
 
             }
         }
-        public ActionResult TrangMat()
-        {
+        /*public ActionResult TrangMat()
+        //{
             
 
-            return View();
-        }
-        public ActionResult TrangCapToc()
-        {
+        //    return View();
+        //}
+        //public ActionResult TrangCapToc()
+        //{
            
 
-            return View();
-        }
-        public ActionResult TrangToanThan()
-        {
+        //    return View();
+        //}
+        //public ActionResult TrangToanThan()
+        //{
           
 
+        //    return View();
+        //}*/
+        public ActionResult Skin_Advisory()
+        {
+            using (var context = new VibotaniDBEntities2())
+            {
+                List<News> data = context.News.SqlQuery("SELECT * FROM dbo.News WHERE Category=N'Tư vấn da'").OrderBy(x => x.ID).ToList();
+
+                return View(data);
+            }
+        
+        }
+        public ActionResult Skin_Advisory_Post(int id)
+        {
+            News post = db.News.Find(id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+            
+            ViewBag.Post = post;
             return View();
         }
         public ActionResult Advisory()
@@ -60,7 +85,7 @@ namespace ViBotani.Controllers
         }
         public ActionResult News()
         {
-            List<News> tempContent = db.News.OrderByDescending(x => x.ID).ToList();
+            List<News> tempContent = db.News.OrderBy(x => x.ID).ToList();
             // List<YuriContentCategory> tempCategory = db.YuriContentCategories.ToList();
             /* List<YuriContent> ContentList = db.YuriContents.Select(x => new YuriContent
              {
@@ -69,19 +94,16 @@ namespace ViBotani.Controllers
              }).ToList();*/
             return View(tempContent);
         }
-        public ActionResult Post(string Metatitle, int id)
+        public ActionResult Post( int id)
         {
-            if (Metatitle == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             //YuriContent yuriContent = db.YuriContents.Where(x=>x.MetaTitle==Metatitle).FirstOrDefault();   
             News post = db.News.Find(id);
             if (post == null)
             {
                 return HttpNotFound();
             }
-            List<News> tempContent = db.News.OrderByDescending(x => x.ID).ToList();
+            List<News> tempContent = db.News.OrderBy(x => x.ID).ToList();
             ViewBag.Post = post;
             return View(tempContent);
         }
@@ -94,7 +116,7 @@ namespace ViBotani.Controllers
                 return HttpNotFound();
             }
             ViewBag.Product = product;
-            
+            if (product.List_Image == null) product.List_Image = "";
             MatchCollection m = Regex.Matches(product.List_Image, "src\\s*=\\s*['\"](?<src>[^'\"]*)['\"]");
            
             string[] arr = new string[m.Count];
@@ -129,7 +151,7 @@ namespace ViBotani.Controllers
 
             return View();
         }
-        public ActionResult postSanxuatISO()
+       /* public ActionResult postSanxuatISO()
         {
             
             return View();
@@ -158,6 +180,6 @@ namespace ViBotani.Controllers
         {
             return View();
         }
-        
+        */
     }
 }

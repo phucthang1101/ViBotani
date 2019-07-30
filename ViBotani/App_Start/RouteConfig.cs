@@ -16,17 +16,26 @@ namespace ViBotani
             );
             routes.MapRoute(
             name: "ProductInfomation",
-            url: "{Meta_Kindof}/{Metatitle}/{id}",
+            url: "san-pham-trang-da/{Meta_Kindof}/{Metatitle}/{id}",
             defaults: new { controller = "Home", action = "ProductInfomation" },
              namespaces: new[] { "ViBotani.Controllers" }
 
         );
+
             routes.MapRoute(
            name: "post",
-           url: "tin-tuc/{Metatitle}/{id}",
+           url: "chi-tiet-tin-tuc/{Metatitle}/{id}",
            defaults: new { controller = "Home", action = "Post" },
            namespaces: new[] { "ViBotani.Controllers" }
        );
+
+            routes.MapRoute(
+              name: "tuvanda",
+              url: "tu-van-da/{Metatitle}/{id}",
+              defaults: new { controller = "Home", action = "Skin_Advisory_Post"},
+               namespaces: new[] { "ViBotani.Controllers" }
+          );
+
             routes.MapRoute(
                 name: "tintuc",
                 url: "tin-tuc",
@@ -34,20 +43,21 @@ namespace ViBotani
                  namespaces: new[] { "ViBotani.Controllers" }
             );
             routes.MapRoute(
-               name: "tuvanda",
+               name: "tuvandapost",
                url: "tu-van-da",
-               defaults: new { controller = "Home", action = "Advisory", id = UrlParameter.Optional },
+               defaults: new { controller = "Home", action = "Skin_Advisory", id = UrlParameter.Optional },
                 namespaces: new[] { "ViBotani.Controllers" }
            );
+            
             routes.MapRoute(
                name: "sanphamtrangda",
-               url: "san-pham-trang-da",
-               defaults: new { controller = "Home", action = "Product", id = UrlParameter.Optional },
+               url: "san-pham-trang-da/{Meta_Kindof}",
+               defaults: new { controller = "Home", action = "Product", Meta_Kindof = UrlParameter.Optional },
                 namespaces: new[] { "ViBotani.Controllers" }
 
            );
-           
 
+            
             routes.MapRoute(
                name: "trangmat",
                url: "san-pham-trang-da/trang-mat",

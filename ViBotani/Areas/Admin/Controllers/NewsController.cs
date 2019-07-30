@@ -10,7 +10,7 @@ using ViBotani.Models;
 
 namespace ViBotani.Areas.Admin.Controllers
 {
-    public class NewsController : Controller
+    public class NewsController : BaseController
     {
         private VibotaniDBEntities2 db = new VibotaniDBEntities2();
 
@@ -80,6 +80,7 @@ namespace ViBotani.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "ID,Name,MetaTitle,Description,Category,Image,Detail,CreatedDate,CreatedBy")] News news)
         {
             if (ModelState.IsValid)

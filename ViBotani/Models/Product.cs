@@ -19,7 +19,7 @@ namespace ViBotani.Models
         public string MetaTitle { get; set; }
         public string Description { get; set; }
         public string Product_Line { get; set; }
-        public string Image { get; set; }
+        public string Image_Main { get; set; }
         public string Detail { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public string List_Image { get; set; }
@@ -27,5 +27,6 @@ namespace ViBotani.Models
         public string Kindof_Product { get; set; }
         public string Meta_ProductLine { get; set; }
         public string Meta_Kindof { get; set; }
+        public string Image_Outside { get; set; }
     }
 }

@@ -24,7 +24,7 @@
           <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Product_Line" ColumnName="Product_Line" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_Main" ColumnName="Image_Main" />
           <ScalarProperty Name="Detail" ColumnName="Detail" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="List_Image" ColumnName="List_Image" />
@@ -32,6 +32,7 @@
           <ScalarProperty Name="Kindof_Product" ColumnName="Kindof_Product" />
           <ScalarProperty Name="Meta_ProductLine" ColumnName="Meta_ProductLine" />
           <ScalarProperty Name="Meta_Kindof" ColumnName="Meta_Kindof" />
+          <ScalarProperty Name="Image_Outside" ColumnName="Image_Outside" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
