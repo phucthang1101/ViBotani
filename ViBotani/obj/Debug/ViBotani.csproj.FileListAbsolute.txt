@@ -267,3 +267,4 @@ C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.csproj.CoreC
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.csproj.CopyComplete
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.pdb
+C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.csprojAssemblyReference.cache
