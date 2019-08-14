@@ -1,13 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N7HTCPF');</script>
-<!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-N7HTCPF');</script>
+    <!-- End Google Tag Manager -->
 
 
 
@@ -18,7 +22,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <title>ViBotani - @ViewBag.Title</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     @Styles.Render("~/Content/css")
-    
+
+   
     <link rel="stylesheet" href="/Content/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/Content/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
 </head>
@@ -271,32 +276,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                     <div class="col-md-12 col-lg-6 px-2">
                         <h5 class="mt-3 text-green-s pl-5">Gởi thông tin để nhận tư vấn từ ViBotani:</h5>
-                        <form id="form-contact">
-                            <div class="form-group row mx-0">
-                                <label class="col-4 col-sm-2 col-md-2">Tên</label>
-                                <input type="text" class="form-control col-8 col-sm-9 col-md-9 bg-s border-1" placeholder="Nhập tên của bạn" />
-                            </div>
-                            <div class="row mx-0">
-                                <div class="col-md-6 col-sm-12 px-0  mx-0">
-                                    <div class="form-group row mx-0">
-                                        <label class="col-4 col-sm-2 col-md-4">Email</label>
-                                        <input class="form-control bg-s border-1 col-8 col-sm-9 col-md-8" placeholder="Nhập email của bạn" />
+                        @using (Html.BeginForm("forAdvisory", "Home", FormMethod.Post))
+                        {
+                            <form id="form-contact">
+                                <div class="form-group row mx-0">
+                                    <label class="col-4 col-sm-2 col-md-2">Tên</label>
+                                    <input type="text" name="name" class="form-control col-8 col-sm-9 col-md-9 bg-s border-1" placeholder="Nhập tên của bạn" />
+                                </div>
+                                <div class="row mx-0">
+                                    <div class="col-md-6 col-sm-12 px-0  mx-0">
+                                        <div class="form-group row mx-0">
+                                            <label class="col-4 col-sm-2 col-md-4">Email</label>
+                                            <input name="email" class="form-control bg-s border-1 col-8 col-sm-9 col-md-8" placeholder="Nhập email của bạn" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 px-0  mx-0">
+                                        <div class="form-group row mx-0">
+                                            <label class="col-4 col-sm-2 col-md-3">Phone</label>
+                                            <input name="phone" class="form-control bg-s border-1 col-8 col-sm-9 col-md-7" placeholder="Nhập số điện thoại" />
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12 px-0  mx-0">
-                                    <div class="form-group row mx-0">
-                                        <label class="col-4 col-sm-2 col-md-3">Phone</label>
-                                        <input class="form-control bg-s border-1 col-8 col-sm-9 col-md-7" placeholder="Nhập số điện thoại" />
-                                    </div>
+                                <div class="form-group row mx-0">
+                                    <label class="col-4 col-sm-2 col-md-2">Yêu cầu</label>
+                                    <textarea name="request" class="form-control col-8 col-sm-9 col-md-9 bg-s border-1" rows="2" placeholder="Nhập yêu cầu của bạn"></textarea>
                                 </div>
-                            </div>
-                            <div class="form-group row mx-0">
-                                <label class="col-4 col-sm-2 col-md-2">Yêu cầu</label>
-                                <textarea class="form-control col-8 col-sm-9 col-md-9 bg-s border-1" rows="2" placeholder="Nhập yêu cầu của bạn"></textarea>
-                            </div>
-                            <button type="button" class="text-center btn border-1 text-green pl-4 pr-4 mt-3">Gửi thông tin</button>
-                        </form>
-                    </div>
+                                <button type="submit" class="text-center btn border-1 text-green pl-4 pr-4 mt-3">Gửi thông tin</button>
+                            </form>
+                        }
+                        </div>
                 </div>
             </footer>
         </div>

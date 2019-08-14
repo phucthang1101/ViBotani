@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ViBotani.Models.News>
+@{
+    ViewBag.Title = "Skin_Advisory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="px-4 py-2 text-center">
+    <div class="bg--s shadow-s br-10">
+
+        @{
+
+            for (int i = 0; i <= Model.Count() - 1; i++)
+            {
+
+                var item = Model.ElementAtOrDefault(i);
+                var url = "tu-van-da" + "/" + item.MetaTitle + "/" + item.ID;
+                    <div class="row m-0">
+                        <div class="col-lg-6 col-12 py-3">
+                            <img class="w-100 shadow-s br-20" src="@item.Image" />
+                        </div>
+                        <div class="col-lg-6 col-12 py-3 text-left">
+                            <a class="advisory-link" href="@url">
+                              
+                                <h2 class="pt-0 text-green-s">@item.Name</h2>
+                            </a>
+                            <p class="text-green text-left pr-4">
+                                @item.Description
+                                </p>
+                        </div>
+                    </div>
+
+                }
+            }
+        </div>
+</div>

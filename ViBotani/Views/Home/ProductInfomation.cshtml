@@ -5,47 +5,142 @@
 }
 @{
     var Product = ViewBag.Product;
+    var Data = ViewBag.Data;
 }
+<head>
+    <link rel="stylesheet" href="~/Content/OwlCarousel2-2.3.4/dist/assets/carouselProduct.css" />
+</head>
 
+<section>
+    <div class="row align-items-md m-0 bg-s">
+        <div class="col-md-5 mt-3 col-sm-12">
+            <img class="w-100 mb-3 image-main" src="@Product.Image_Main" />
 
-<div class="row align-items-md m-0 bg-s">
-    <div class="col-md-5 mt-3 col-sm-12">
-        <img class="w-100 mb-3 image-main" src="@Product.Image_Main" />
+            <div class="owl-carousel owl-theme p-2" id="product-detail-carousel">
+                @{
+                    int count = 0;
+                    foreach (var item in Model)
+                    {
+                        <div class="item">
+                            <img class="image-@count" src="@item" />
 
-        <div class="owl-carousel owl-theme p-2" id="product-detail-carousel">
-            @{
-                int count = 0;
-                foreach (var item in Model)
-                {
-                    <div class="item">
-                        <img class="image-@count" src="@item" />
-
-                    </div>
-                    count++;
+                        </div>
+                        count++;
+                    }
                 }
+
+            </div>
+        </div>
+
+
+        <div class="col-md-7 col-sm-12 pl-3 pr-5">
+            <div class="col-12 col-md-8 mx-auto">
+                <img class="w-100" src="~/Content/Image/Logo/Logo_BiOshi.png" />
+            </div>
+            <h3 class="text-green text-center title" style="font-weight:bold;">@Product.Heading</h3>
+            <h5 class="text-center text-green-s sub-title"><i>@Product.Name</i></h5>
+            <h5 class="text-green-s" style="font-weight:bold">
+                @Html.Raw(Product.Detail)
+            </h5>
+
+            <div class="text-center pb-3">
+                <button data-toggle="modal" data-target="#modal-agency-condition" class="btn text-green bg-s  border-1">Đăng ký làm đại lý của ViBotani</button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+</section>
+<div class="container-fluid">
+
+    <h3 class="text-green text-center title" style="font-weight:bold;">Sản phẩm liên quan</h3>
+    <div class="row align-items-md m-0 bg-s">
+
+
+        <!--1-->
+        @{
+            int count1 = 0;
+            foreach (var item in Data)
+            {
+                var url = "/san-pham-trang-da/" + item.Meta_Kindof + "/" + item.MetaTitle + "/" + item.ID;
+
+                if (count1 == 4) { break; }
+
+                <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+                    <div class="image-container">
+                        <a class="product-link " href="@url">
+
+                            <img class="image " style="height:100%;width:auto;" src="@item.Image_Outside" />;
+
+                        </a>
+                    </div>
+                    <h5 class="text-center text-green">
+                        <a class="product-link text-green" href="@url">
+                            <b>@item.Name</b>
+                        </a>
+                    </h5>
+
+                    <p class="text-green-s">@item.Description </p>
+
+                </div>
+                count1++;
             }
+        }
 
-        </div>
+        <!--here-->
+
+
     </div>
-
-
-    <div class="col-md-7 col-sm-12 pl-3 pr-5">
-        <div class="col-12 col-md-8 mx-auto">
-            <img class="w-100" src="~/Content/Image/Logo/Logo_BiOshi.png" />
-        </div>
-        <h3 class="text-green text-center title" style="font-weight:bold;">@Product.Heading</h3>
-        <h5 class="text-center text-green-s sub-title"><i>@Product.Name</i></h5>
-        <h5 class="text-green-s" style="font-weight:bold">
-          @Html.Raw(Product.Detail)
-        </h5>
-
-        <div class="text-center pb-3">
-            <button data-toggle="modal" data-target="#modal-agency-condition" class="btn text-green bg-s  border-1">Đăng ký làm đại lý của ViBotani</button>
-        </div>
-    </div>
-
-
 </div>
+
+
+@*<div class="container-fluid">
+
+        <h3 class="text-green text-center title" style="font-weight:bold;">Sản phẩm liên quan</h3>
+
+        <div class="row align-items-md m-0 bg-s">
+            <div class="owl-carousel owl-theme owl-loaded">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage">
+
+
+                        @{
+
+                            foreach (var item in Data)
+                            {
+                                var url = "/san-pham-trang-da/" + item.Meta_Kindof + "/" + item.MetaTitle + "/" + item.ID;
+
+                                <div class="owl-item">
+                                    <div class="img" style="background-image:url('@item.Image_Outside');"></div>
+
+                                    <a href="@url">
+                                        <h4 class="card-title">@item.Name</h4>
+                                    </a>
+
+                                </div>
+
+                            }
+                        }
+                    </div>
+                </div>
+
+
+
+                <div class="owl-dot"><span></span></div>
+                <div class="owl-dot"><span></span></div>
+
+            </div>
+
+        </div>
+    </div>*@
+
+
+
 <!--Modal Agency Condition-->
 <div class="modal fade" id="modal-agency-condition" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
@@ -196,47 +291,51 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h2 class="text-center text-green-s">Thông tin đăng ký đại lý ViBotani</h2>
-                <form class="p-2">
-                    <div class="row">
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="form-group row">
-                                <label class="col-2">Tên</label>
-                                <input class="form-control bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập tên của bạn" />
+                @using (Html.BeginForm("AgencyRegister", "Home", FormMethod.Post))
+                {
+                    <form class="p-2">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">Tên</label>
+                                    <input name="name" class="form-control bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập tên của bạn" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">Email</label>
+                                    <input name="email" class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập email của bạn" />
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="form-group row">
-                                <label class="col-2">Email</label>
-                                <input class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập email của bạn" />
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">SĐT 1</label>
+                                    <input name="mobile1" class="form-control p-1 bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập số điện thoại" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">SĐT 2</label>
+                                    <input name="mobile2" class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập số điện thoại" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="form-group row">
-                                <label class="col-2">SĐT 1</label>
-                                <input class="form-control p-1 bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập số điện thoại" />
-                            </div>
+                        <div class="form-group row">
+                            <label class="col-2">Địa chỉ</label>
+                            <input name="address" type="text" class="form-control col-9  bg-s border-1" placeholder="Nhập địa chỉ của bạn" />
                         </div>
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="form-group row">
-                                <label class="col-2">SĐT 2</label>
-                                <input class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập số điện thoại" />
-                            </div>
+                        <div class="form-group row">
+                            <label class="col-2">Ghi chú</label>
+                            <textarea name="note" class="form-control col-9 bg-s border-1" rows="4" placeholder="Nhập ghi chú của bạn"></textarea>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-2">Địa chỉ</label>
-                        <input type="text" class="form-control col-9  bg-s border-1" placeholder="Nhập địa chỉ của bạn" />
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-2">Ghi chú</label>
-                        <textarea class="form-control col-9 bg-s border-1" rows="4" placeholder="Nhập ghi chú của bạn"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="button" class="text-center btn border-1 text-green pl-4 pr-4">Gửi thông tin</button>
-                    </div>
-                </form>
+                        <div class="text-center">
+                            <button type="submit" class="text-center btn border-1 text-green pl-4 pr-4">Gửi thông tin</button>
+                        </div>
+
+                    </form>
+                }
             </div>
         </div>
     </div>

@@ -235,9 +235,7 @@ C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Diagnostics.F
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Diagnostics.StackTrace.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.IO.Compression.dll
-C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
-C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.IO.Pipes.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Security.AccessControl.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Security.Claims.dll
@@ -248,7 +246,6 @@ C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Security.Cryp
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Security.Principal.Windows.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Text.Encoding.CodePages.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Threading.Thread.dll
-C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.ValueTuple.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Xml.ReaderWriter.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Xml.XmlDocument.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.Xml.XPath.dll
@@ -260,11 +257,14 @@ C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\VBCSCompiler.exe.con
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\CKFinder.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\EntityFramework.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\EntityFramework.SqlServer.dll
-C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\CKFinder.pdb
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\EntityFramework.xml
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\EntityFramework.SqlServer.xml
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.csproj.CopyComplete
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.pdb
+C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\CKFinder.pdb
+C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\bin\roslyn\System.ValueTuple.dll
 C:\Users\DELL\Desktop\ViBotani\ViBotani\ViBotani\obj\Debug\ViBotani.csprojAssemblyReference.cache

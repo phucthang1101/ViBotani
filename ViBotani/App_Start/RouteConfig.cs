@@ -57,7 +57,19 @@ namespace ViBotani
 
            );
 
-            
+            routes.MapRoute(
+          name: "Register Success",
+          url: "hoan-thanh1",
+          defaults: new { controller = "Home", action = "SuccessAgency", id = UrlParameter.Optional },
+          namespaces: new[] { "ViBotani.Controllers" }
+      );
+            routes.MapRoute(
+                      name: "Register Success2",
+                      url: "hoan-thanh2",
+                      defaults: new { controller = "Home", action = "SuccessAdvisory", id = UrlParameter.Optional },
+                      namespaces: new[] { "ViBotani.Controllers" }
+                  );
+
             routes.MapRoute(
                name: "trangmat",
                url: "san-pham-trang-da/trang-mat",

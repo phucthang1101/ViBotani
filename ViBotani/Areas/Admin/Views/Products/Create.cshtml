@@ -29,14 +29,16 @@
         })
 
         var editor = CKEDITOR.replace('txtContent', {
-            customConfig: '/Assets/admin/js/plugins/ckeditor/config.js',
+           
+            customConfig: '/Areas/Admin/ckeditor/config.js',
 
         });
         var editor = CKEDITOR.replace('txtContent1', {
-            customConfig: '/Assets/admin/js/plugins/ckeditor/config.js',
+          
+            customConfig: '/Areas/Admin/ckeditor/config.js',
 
         });
-
+        CKFinder.setupCKEditor(null, '/ckfinder/');
      
     </script>
 

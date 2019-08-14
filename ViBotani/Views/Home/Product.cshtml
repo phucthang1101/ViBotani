@@ -358,47 +358,51 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h2 class="text-center text-green-s">Thông tin đăng ký đại lý ViBotani</h2>
-                <form class="p-2">
-                    <div class="row">
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="form-group row">
-                                <label class="col-2">Tên</label>
-                                <input class="form-control bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập tên của bạn" />
+                 @using (Html.BeginForm("AgencyRegister", "Home", FormMethod.Post))
+                {
+                    <form class="p-2">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">Tên</label>
+                                    <input name="name" class="form-control bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập tên của bạn" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">Email</label>
+                                    <input name="email" class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập email của bạn" />
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="form-group row">
-                                <label class="col-2">Email</label>
-                                <input class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập email của bạn" />
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">SĐT 1</label>
+                                    <input name="mobile1" class="form-control p-1 bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập số điện thoại" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">SĐT 2</label>
+                                    <input name="mobile2" class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập số điện thoại" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="form-group row">
-                                <label class="col-2">SĐT 1</label>
-                                <input class="form-control p-1 bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập số điện thoại" />
-                            </div>
+                        <div class="form-group row">
+                            <label class="col-2">Địa chỉ</label>
+                            <input name="address" type="text" class="form-control col-9  bg-s border-1" placeholder="Nhập địa chỉ của bạn" />
                         </div>
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="form-group row">
-                                <label class="col-2">SĐT 2</label>
-                                <input class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập số điện thoại" />
-                            </div>
+                        <div class="form-group row">
+                            <label class="col-2">Ghi chú</label>
+                            <textarea name="note" class="form-control col-9 bg-s border-1" rows="4" placeholder="Nhập ghi chú của bạn"></textarea>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-2">Địa chỉ</label>
-                        <input type="text" class="form-control col-9  bg-s border-1" placeholder="Nhập địa chỉ của bạn" />
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-2">Ghi chú</label>
-                        <textarea class="form-control col-9 bg-s border-1" rows="4" placeholder="Nhập ghi chú của bạn"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="button" class="text-center btn border-1 text-green pl-4 pr-4">Gửi thông tin</button>
-                    </div>
-                </form>
+                        <div class="text-center">
+                            <button type="submit" class="text-center btn border-1 text-green pl-4 pr-4">Gửi thông tin</button>
+                        </div>
+
+                    </form>
+                }
             </div>
         </div>
     </div>

@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "Hỏi đáp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="modal fade" id="modal-asking" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content" style="border:none; position:relative;">
+
+
+            <div class="modal-body p-0" style="border:none; position:relative;">
+                <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="text-center text-green-s pb-4">
+                    Thắc mắc của bạn sẽ được giải đáp sớm nhất
+                </h3>
+                <form class=" px-5">
+                    <div class="row m-0 pl-4">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="form-group row">
+                                <label class="col-2">Tên</label>
+                                <input class="form-control col-10 border-1 bg--s" placeholder="Nhập tên của bạn" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-12">
+                            <div class="form-group row">
+                                <label class="col-2">Email</label>
+                                <input class="form-control col-10 border-1 bg--s" placeholder="Nhập email của bạn" />
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="form-group row">
+                                <label class="col-2">SĐT</label>
+                                <input class="form-control col-10 border-1 bg--s" placeholder="Nhập sđt của bạn" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row m-0">
+                        <label class="col-2 col-md-2 col-lg-1 p-0   ">Câu hỏi</label>
+                        <textarea class="form-control col-10 col-md-10 col-lg-11 border-1 bg--s px-0" rows="6" placeholder=" Nhập câu hỏi của bạn"></textarea>
+                    </div>
+                    <div class="text-center py-4">
+                        <button class="btn border-1 bg--s">Đặt câu hỏi</button>
+                    </div>
+                   
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<button type="button"  data-toggle="modal" data-target="#modal-asking" class="btn ask-question py-2 px-5 shadow-s bg-ss text-green-s"> <i class="fa fa-2x fa-comments"></i> Đặt câu hỏi</button>
+<h2 class="text-green-s text-center bg">
+    <strong> CÂU HỎI CỦA BẠN LÀ QUÀ TẶNG CHO CHÚNG TÔI</strong>
+</h2>
+<div class="row m-0 bg-s pb-4 pt-3">
+    <div class="col-md-6 col-sm-12">
+        <h3 class="text-green-s text-center">
+            <b> Hỏi về sản phẩm</b>
+        </h3>
+        <div class="row my-1">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-question"></i>
+            </div>
+            <div class="col-11  text-green-s">
+                <strong> Sản phẩm của Công ty ViBotani được sản xuất ở đâu?</strong>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-lightbulb"></i>
+            </div>
+            <div class="col-11 text-green-s text-justify">
+                Các sản phẩm của Công ty ViBotani Việt Nam được sản xuất tại Việt Nam theo bí quyết/ công thức được chuyển giao từ các đối tác hợp tác quốc tế, như Nhật Bản, Hàn Quốc, Đài Loan, Pháp, Úc,… với 100% nguyên liệu ngoại nhập.
+            </div>
+        </div>
+
+        
+        <div class="row my-1">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-question"></i>
+            </div>
+            <div class="col-11  text-green-s">
+                <strong> Sản phẩm của công ty có đặc điểm nổi trội gì?</strong>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-lightbulb"></i>
+            </div>
+            <div class="col-11 text-green-s text-justify">
+                Công ty ViBotani là nhà cung cấp các sản phẩm làm đẹp có bổ sung các dưỡng chất thiết yếu từ thiên nhiên, do vậy, các sản phẩm của ViBotani có công dụng vượt trội và an toàn cho người sử dụng. ViBotani cung cấp tại thị trường Việt Nam 04 dòng sản phẩm chính, gồm các sản phẩm Trắng da, Đẹp da, Mỹ phẩm và dòng Đặc trị da. Trong đó, dòng sản phẩm Trắng da mang nhãn hiệu BiOshi là sự kế thừa và phát triển từ Bí quyết làm đẹp da của Người Nhật khi đưa các dưỡng chất thiết yếu như chất Adenosine trong Đông Trùng Hạ Thảo, EGCG trong Trà xanh,… vào sản phẩm để tăng hiệu quả làm trắng da thông qua chống lão hóa da, tẩy tế bào chết,…
+            </div>
+        </div>
+       
+        <div class="row my-1">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-question"></i>
+            </div>
+            <div class="col-11  text-green-s">
+                <strong>  Tôi có thể trả lại sản phẩm nếu dùng không hiệu quả?</strong>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-lightbulb"></i>
+            </div>
+            <div class="col-11 text-green-s text-justify">
+                Hầu như khách hàng đều rất hài lòng với các sản phẩm của ViBotani. Nhưng nếu có khách hàng không hài lòng về công dụng của sản phẩm sau khi đã sử dụng đúng như hướng dẫn, quý khách có thể liên hệ với Bộ phận Chăm sóc khách hàng của công ty để được đổi hay trả lại.
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-sm-12">
+        <h3 class="text-green-s text-center">
+           <b> Hỏi về chính sách bán hàng</b>
+
+        </h3>
+        <div class="row my-1">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-question"></i>
+            </div>
+            <div class="col-11  text-green-s">
+                <strong> Sản phẩm của công ty được bán ở đâu?</strong>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-lightbulb"></i>
+            </div>
+            <div class="col-11 text-green-s text-justify">
+                Công ty ViBotani Việt Nam bán sản phẩm trên toàn quốc với 04 kênh bán hàng chính, gồm: Cửa hàng mỹ phẩm ngoại nhập; Trung tâm thương mại-Siêu thị; Hệ thống Spa; Trang thương mại điện tử và Online.
+            </div>
+        </div>
+       
+        <div class="row my-1">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-question"></i>
+            </div>
+            <div class="col-11  text-green-s">
+                <strong>Tôi được quyền lợi gì khi làm đại lý của công ty?</strong>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-lightbulb"></i>
+            </div>
+            <div class="col-11 text-green-s text-justify">
+                Đại lý có một số lợi ích như: Bán sản phẩm chính hãng với công dụng vượt trội, sản xuất theo tiêu chuẩn quốc tế ISO 9001; Thương hiệu sản phẩm cao cấp và đáng tin cậy; Thương hiệu được Người nổi tiếng tin dùng và quảng cáo; Có chính sách hỗ trợ mở rộng mạng lưới bán hàng; Đảm bảo công bằng trong chính sách và lợi nhuận; Có chính sách lấy hàng tích lũy trong thời gian đầu; Luôn có chính sách thưởng định kỳ khi đạt chỉ tiêu; Được đào tạo định kỳ bởi các Chuyên gia hàng đầu và Tổ chức uy tín. Tùy vào cấp bậc đại lý sẽ có tỷ lệ lợi nhuận hấp dẫn cụ thể tương ứng.
+            </div>
+        </div>
+
+       
+        <div class="row my-1">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-question"></i>
+            </div>
+            <div class="col-11  text-green-s">
+                <strong>Điều kiện để tôi đăng ký làm đại lý?</strong>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-1">
+                <i class="text-green-s fa fa-2x fa-lightbulb"></i>
+            </div>
+            <div class="col-11 text-green-s text-justify">
+                Điều kiện chung để có thể làm đại lý của công ty bao gồm: Đam mê lĩnh vực hóa mỹ phẩm; Đam mê kinh doanh; Có thời gian tương tác bán hàng; Tuân thủ chính sách bán hàng của công ty (không bán phá giá, tuân thủ chương trình khuyến mãi và truyền thông,…); Có tài chính nhất định để kinh doanh. Riêng với kênh bán hàng Trang thương mại điện tử và Online, hiện nay Công ty phân thành 03 cấp bậc, gồm Nhà Phân phối (03 cấp), Đại lý (03 cấp) và Chi nhánh (02 cấp); tùy mỗi cấp bậc có điều kiện về chỉ tiêu bán hàng hàng tháng khác nhau.
+            </div>
+        </div>
+    </div>
+</div>

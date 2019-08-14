@@ -1,0 +1,447 @@
+﻿@model IEnumerable<ViBotani.Models.Product>
+
+@{
+    ViewBag.Title = "Sản phẩm trắng da";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- search product-->
+<div style="position:fixed;bottom:2rem;left:0.5rem;z-index:100;width:25%;">
+    <div id="search__header">
+        <button class="btn btn-success" style="border-radius:50%;width:40px;height:40px;" id="search_open"><i class="fas fa-search"></i></button>
+        <button class="btn d-none pb-0" style="color:#28a745" id="search_close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class=" d-none" id="search_container">
+        <input style="border:3px solid #28a745;border-radius:0;" type="text" class="mb-2 form-control" placeholder="Tìm kiếm sản phẩm" aria-label="Input group example" aria-describedby="btnGroupAddon">
+        <div class="input-group mb-2">
+            <select style="border:3px solid #28a745;border-radius:0;display:block;" type="text" class="form-control search__product">
+                <option disabled selected>--Chọn dòng sản phẩm--</option>
+                <option value="/san-pham-trang-da">Sản phẩm trắng da</option>
+                <option value="#">Sản phẩm đẹp da</option>
+                <option value="#">Mỹ phẩm</option>
+                <option value="#">Sản phẩm đặc trị</option>
+            </select>
+        </div>
+        <div class="input-group mb-2">
+            <select style="border:3px solid #28a745;border-radius:0;display:block;" type="text" class="form-control search__product">
+                <option disabled selected>--Chọn loại sản phẩm--</option>
+                <option value="/san-pham-trang-da/trang-mat">Trắng mặt</option>
+                <option value="/san-pham-trang-da/trang-cap-toc">Trắng cấp tốc</option>
+                <option value="/san-pham-trang-da/trang-toan-than">Trắng toàn thân</option>
+            </select>
+        </div>
+        <button class="btn btn-success" style="border-radius:0;"><i class="fas fa-search"></i></button>
+    </div>
+</div>
+<!--modal-product-detail-->
+<div class="modal fade" id="modal-product-detail" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content" style="border:none; position:relative;">
+            <div class="modal-body p-0" style="border:none; position:relative;">
+                <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="row align-items-md-center m-0 bg-s">
+                    <div class="col-md-5 mt-3 col-sm-12">
+                        <img class="w-100 mb-3 image-main" />
+                        <div class="owl-carousel owl-theme p-2" id="product-detail-carousel">
+                            <div class="item">
+                                <img class="image-1" />
+                            </div>
+                            <div class="item">
+                                <img class="image-2" />
+                            </div>
+                            <div class="item">
+                                <img class="image-3" />
+                            </div>
+                            <div class="item">
+                                <img class="image-4" />
+                            </div>
+                            <div class="item">
+                                <img class="image-5" />
+                            </div>
+                            <div class="item">
+                                <img class="image-6" />
+                            </div>
+                            <div class="item">
+                                <img class="image-7" />
+                            </div>
+                            <div class="item">
+                                <img class="image-8" />
+                            </div>
+                            <div class="item">
+                                <img class="image-9" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12 pl-3 pr-5">
+                        <div class="col-12 col-md-8 mx-auto">
+                            <img class="w-100" src="~/Content/Image/Logo/Logo_BiOshi.png" />
+                        </div>
+                        <h3 class="text-green text-center title" style="font-weight:bold;">Whitening Face Cream </h3>
+                        <h5 class="text-center text-green-s sub-title"><i>White Beauty from Nature</i></h5>
+                        <h5 class="text-green-s" style="font-weight:bold">
+                            Thông tin sản phẩm
+                        </h5>
+
+                        <p class="text-green info" style="font-size:15px;">
+
+                        </p>
+
+                        <h5 class="text-green-s" style="font-weight:bold">
+                            Thành phần
+
+                        </h5>
+                        <p class="text-green  ingredient " style="font-size:15px;">
+                        </p>
+                        <h5 class="text-green-s" style="font-weight:bold">
+                            Hướng dẫn sử dụng
+
+                        </h5>
+                        <p class="text-green use" style="font-size:15px;">
+                        </p>
+                        <h5>Giá bán lẻ đề nghị: <small class="text-green price"></small></h5>
+                        <div class="text-center pb-3">
+                            <button data-toggle="modal" data-target="#modal-agency-condition" class="btn text-green bg-s  border-1">Đăng ký làm đại lý của ViBotani</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Carousel-->
+<section>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" style="background: linear-gradient(#f6dee1,#f8d5d5);">
+            <div class="carousel-item active">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5124.jpg" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5204.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5235.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5376.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9143. BiOshi.jpg" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A5183.jpg" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9208.jpg" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9240.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9280.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9358.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9361.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Image/slide/san-pham/max/8U9A9371.JPG" class="d-block w-75 mx-auto" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+<section class="bg-s">
+    <div class="row m-0">
+        <!--1-->
+        @{
+
+            for (int i = 0; i <= Model.Count() - 1; i++)
+            {
+
+                var item = Model.ElementAtOrDefault(i);
+                var url ="/san-pham-trang-da/"+ item.Meta_Kindof + "/" + item.MetaTitle + "/" + item.ID;
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center p-2 pt-4">
+            <div class="image-container">
+                <a class="product-link " href="@url">
+                    @if (i == 2 || i == 3 || (i > 7&&i<13))
+                    {
+                        <img class="image " @*style="height:100%;width:auto;"*@ src="@item.Image_Outside" />;
+                    }
+                    else
+                    {
+                        <img class="image " style="height:100%;width:auto;" src="@item.Image_Outside" />;
+                    }
+                </a>
+            </div>
+            <h5 class="text-center text-green">
+                <a class="product-link text-green" href="@url">
+                    <b>@item.Name</b>
+                </a>
+             </h5>
+
+            <p class="text-green-s">@item.Description </p>
+
+        </div>
+            }
+        }
+       
+        <!--here-->
+
+
+    </div>
+</section>
+
+<!--Modal Agency Condition-->
+<div class="modal fade" id="modal-agency-condition" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content" style="border:none; position:relative;">
+
+            <div class="modal-body shadow-s bg-s p-0" style="border:1px solid gray; position:relative;">
+                <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="row m-0 py-4 px-3">
+                    <div class="col-lg-7">
+                        <!--cross 1-->
+                        <div class="row m-0">
+                            <div class="col-lg-3 col-4">
+                                <div class="hexagon hexagon-1">
+                                    <span></span>
+                                    <div class="inside">
+                                        01
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-8 pt-lg-3">
+                                <h4 class="text-green-s">Đam mê lĩnh vực hóa mỹ phẩm</h4>
+                            </div>
+                        </div>
+                        <!--cross 2-->
+                        <div class="row m-0">
+                            <div class="row m-0">
+                                <div class="col-lg-2 d-none d-lg-block">
+                                </div>
+                                <div class="col-lg-3 col-4">
+                                    <div class="hexagon hexagon-2">
+                                        <span></span>
+                                        <div class="inside">
+                                            02
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 pt-3 col-8">
+                                    <h4 class="text-green-s"> Có niềm đam mê kinh doanh</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!--cross 3-->
+                        <div class="row m-0">
+                            <div class="row m-0">
+                                <div class="col-lg-4  d-none d-lg-block">
+                                </div>
+                                <div class="col-lg-3 col-4">
+                                    <div class="hexagon hexagon-3">
+                                        <span></span>
+                                        <div class="inside">
+                                            03
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-8 pt-3">
+                                    <h5 class="text-green-s">Có thời gian tương tác bán hàng</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!--cross 4-->
+                        <div class="row m-0">
+                            <div class="row m-0">
+                                <div class="col-lg-2 d-none d-lg-block">
+                                </div>
+                                <div class="col-lg-3 col-4">
+                                    <div class="hexagon hexagon-4">
+                                        <span></span>
+                                        <div class="inside">
+                                            04
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 pt-3 col-8">
+                                    <h4 class="text-green-s">Có tài chính nhất định để kinh doanh</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!--cross 5-->
+                        <div class="row m-0">
+                            <div class="col-lg-3 col-4">
+                                <div class="hexagon hexagon-5">
+                                    <span></span>
+                                    <div class="inside">
+                                        05
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="col-lg-4 cross cross-1  d-none d-lg-block">
+
+                                </div>*@
+                            <div class="col-lg-5 col-8 pt-lg-3">
+                                <h4 class="text-green-s">Tuân thủ chính sách bán hàng</h4>
+                            </div>
+                        </div>
+                        @*<small><i class="text-green">Xin liên hệ 0383.038.039 để hỏi thêm thông tin</i></small>*@
+                    </div>
+                    <div class="col-lg-5 bg-white right mt-4">
+                        <h3 class="mt-2 text-green text-center">QUYỀN LỢI CỦA CÁC ĐẠI LÝ</h3>
+                        <div class="bg-s py-1 inside">
+                            <ul>
+                                <li class="text-green-s">
+                                    Sản phẩm chính hãng với công dụng vượt trội, sản xuất theo tiêu chuẩn quốc tế ISO 9001
+                                </li>
+                                <li class="text-green-s">
+                                    Thương hiệu sản phẩm cao cấp và đáng tin cậy
+                                </li>
+                                <li class="text-green-s">
+                                    Thương hiệu được Người nổi tiếng tin dùng và quảng cáo sản phẩm
+                                </li>
+                                <li class="text-green-s">
+                                    Đảm bảo công bằng trong chính sách và lợi nhuận thỏa đáng
+                                </li>
+                                <li class="text-green-s">
+                                    Có chính sách hỗ trợ mở rộng mạng lưới bán hàng
+                                </li>
+                                <li class="text-green-s">
+                                    Có chính sách lấy hàng tích lũy trong thời gian đầu
+                                </li>
+                                <li class="text-green-s">
+                                    Luôn có chính sách thưởng định kỳ khi đạt chỉ tiêu
+                                </li>
+                                <li class="text-green-s">
+                                    Được đào tạo định kỳ bởi các Chuyên gia và Tổ chức uy tín
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="text-center my-2">
+                            <button data-toggle="modal" data-target="#modal-agency-register" type="button" class="btn bg px-4 py-1 border-1  r-close">
+                                Cung cấp thông tin đại lý
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal Agency Register-->
+<div class="modal fade" id="modal-agency-register" tabindex="-1" role="dialog" aria-labelledby="modal-product" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content" style="border:none; position:relative;">
+
+            <div class="modal-body p-0" style="border:none; position:relative;">
+                <button type="button" class="close text-right modal-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h2 class="text-center text-green-s">Thông tin đăng ký đại lý ViBotani</h2>
+                < @using (Html.BeginForm("AgencyRegister", "Home", FormMethod.Post))
+                {
+                    <form class="p-2">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">Tên</label>
+                                    <input name="name" class="form-control bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập tên của bạn" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">Email</label>
+                                    <input name="email" class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập email của bạn" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">SĐT 1</label>
+                                    <input name="mobile1" class="form-control p-1 bg-s border-1 col-9 offset-lg-2 col-lg-8" placeholder="Nhập số điện thoại" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-2">SĐT 2</label>
+                                    <input name="mobile2" class="form-control bg-s border-1 col-9 col-lg-8" placeholder="Nhập số điện thoại" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-2">Địa chỉ</label>
+                            <input name="address" type="text" class="form-control col-9  bg-s border-1" placeholder="Nhập địa chỉ của bạn" />
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-2">Ghi chú</label>
+                            <textarea name="note" class="form-control col-9 bg-s border-1" rows="4" placeholder="Nhập ghi chú của bạn"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="text-center btn border-1 text-green pl-4 pr-4">Gửi thông tin</button>
+                        </div>
+
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        $('.product-link').on('click', function () {
+            $('#modal-product-detail .info').html($(this).data('info'));
+            $('#modal-product-detail .price').html($(this).data('price'));
+            $('#modal-product-detail .detail').html($(this).data('detail'));
+            $('#modal-product-detail .title').html($(this).data('title'));
+            $('#modal-product-detail .sub-title').html($(this).data('sub-title'));
+            $('#modal-product-detail .use').html($(this).data('use'));
+            $('#modal-product-detail .ingredient').html($(this).data('ingredient'));
+            $("#modal-product-detail .image-main").attr("src", $(this).data('image-main'));
+            for (let i = 1; i <= 9; i++) {
+                let ClassNameImg = "image-" + i;
+                let SrcImg = $(this).data(ClassNameImg);
+                console.log(SrcImg);
+                if (SrcImg) {
+                    $("#modal-product-detail ." + ClassNameImg).attr("src", $(this).data(ClassNameImg));
+                }
+                else {
+                    console.log(i);
+                    $("#modal-product-detail ." + ClassNameImg).attr("src", "");
+                }
+            }
+            //$("#modal-product-detail .image-1").attr("src", $(this).data('image-1'));
+            //$("#modal-product-detail .image-2").attr("src", $(this).data('image-2'));
+            //$("#modal-product-detail .image-3").attr("src", $(this).data('image-3'));
+            //$("#modal-product-detail .image-4").attr("src", $(this).data('image-4'));
+            //$("#modal-product-detail .image-5").attr("src", $(this).data('image-5'));
+            //$("#modal-product-detail .image-6").attr("src", $(this).data('image-6'));
+            //$("#modal-product-detail .image-7").attr("src", $(this).data('image-7'));
+        })
+        $(".search__product").change(function () {
+            document.location.href = $(this).val();
+        });
+    </script>
+}
